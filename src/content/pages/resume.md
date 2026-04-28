@@ -3,7 +3,7 @@ slug: resume
 order: 2
 title: 이력서 초안
 eyebrow: Resume / Draft Narrative Profile
-summary: 개인 이력의 세부 수치는 추후 교체 가능하도록 남겨 두고, 현재는 몰입 중심 콘텐츠 기획자의 작업 관점을 먼저 드러내는 버전입니다.
+summary: 이후 교체 예정
 ---
 ## 한 줄 정의
 

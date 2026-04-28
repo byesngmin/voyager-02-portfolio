@@ -11,8 +11,7 @@ const navItems = [
   { to: "/self-intro", label: "자기소개서" },
   { to: "/projects", label: "프로젝트" },
   { to: "/game-history", label: "게임 이력" },
-  { to: "/devlog", label: "개발 로그" },
-  { to: "/site-plan", label: "사이트 기획서", subtle: true },
+  { to: "/records", label: "기획/로그", subtle: true },
 ];
 
 export function Layout({ children }: LayoutProps) {
@@ -27,28 +26,35 @@ export function Layout({ children }: LayoutProps) {
             <p>스토리텔링과 콘텐츠 결합으로 몰입감을 설계하는 항해 기록</p>
           </div>
         </div>
-        <nav className="site-nav" aria-label="주요 메뉴">
-          {navItems.map((item) => (
-            <NavLink
-              className={({ isActive }) =>
-                [
-                  "site-nav__link",
-                  item.subtle ? "site-nav__link--subtle" : "",
-                  isActive ? "is-active" : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")
-              }
-              key={item.to}
-              to={item.to}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
       </header>
 
-      <main className="site-main">{children}</main>
+      <div className="site-layout">
+        <main className="site-main">{children}</main>
+        <aside className="site-sidebar">
+          <div className="site-sidebar__panel">
+            <p className="site-header__eyebrow">Orbital Map</p>
+            <nav className="site-nav" aria-label="주요 메뉴">
+              {navItems.map((item) => (
+                <NavLink
+                  className={({ isActive }) =>
+                    [
+                      "site-nav__link",
+                      item.subtle ? "site-nav__link--subtle" : "",
+                      isActive ? "is-active" : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")
+                  }
+                  key={item.to}
+                  to={item.to}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
+        </aside>
+      </div>
 
       <footer className="site-footer">
         <p>Voyager-02 Portfolio v1</p>
