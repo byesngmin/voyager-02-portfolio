@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="보이저 2호를 모티프로 한 게임 콘텐츠 기획자 포트폴리오 SPA"
+    />
+    <script>
+      (function (locationObject) {
+        if (locationObject.search[1] === "/") {
+          const decoded = locationObject.search
+            .slice(1)
+            .split("&")
+            .map((entry) => entry.replace(/~and~/g, "&"))
+            .join("?");
+
+          window.history.replaceState(
+            null,
+            "",
+            locationObject.pathname.slice(0, -1) + decoded + locationObject.hash,
+          );
+        }
+      })(window.location);
+    </script>
+    <title>보이저 2호 | 게임 콘텐츠 기획자 포트폴리오</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
