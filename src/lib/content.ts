@@ -17,6 +17,12 @@ export type PageFrontmatter = BaseFrontmatter & {
   summary?: string;
   mission?: string;
   signature?: string;
+  hero_line1?: string;
+  hero_line2?: string;
+  stats?: { value: string; label: string }[];
+  cta?: { label: string; href: string; primary?: boolean }[];
+  process?: { icon: string; title: string; body: string }[];
+  contact?: { headline: string; body: string; href: string; label: string };
   highlights?: { title: string; body: string }[];
   quickLinks?: { label: string; href: string; note: string }[];
 };
