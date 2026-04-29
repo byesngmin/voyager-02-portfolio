@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npx vite build
         env:
           GITHUB_PAGES: "true"
           BASE_PATH: "/${{ github.event.repository.name }}/"

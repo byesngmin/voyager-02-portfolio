@@ -4,6 +4,22 @@ order: 2
 title: 이력서 초안
 eyebrow: Resume / Draft Narrative Profile
 summary: 이후 교체 예정
+skills:
+  - category: 내러티브 설계
+    items:
+      - { label: 인터랙티브 스토리 구조, level: 5 }
+      - { label: 캐릭터 아크 & 보이스, level: 4 }
+      - { label: 정보 노출 타이밍 설계, level: 5 }
+  - category: 콘텐츠 기획
+    items:
+      - { label: 퀘스트 / 미션 설계, level: 4 }
+      - { label: 라이브 이벤트 기획, level: 3 }
+      - { label: UI 연출 & 피드백 설계, level: 4 }
+  - category: 문서화 & 협업
+    items:
+      - { label: 기획서 / 플로우 작성, level: 5 }
+      - { label: 크로스팀 커뮤니케이션, level: 4 }
+      - { label: 데이터 기반 회고, level: 3 }
 ---
 ## 한 줄 정의
 

@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getPage, getProjects } from "../lib/content";
+import { getSignal } from "../lib/signals";
 
 const ICONS: Record<string, React.ReactNode> = {
   target: (
@@ -50,6 +51,9 @@ const ICONS: Record<string, React.ReactNode> = {
 };
 
 export function HomeRoute() {
+  const [searchParams] = useSearchParams();
+  const signalKey = searchParams.get("signal");
+  const signal = getSignal(signalKey);
   const document = getPage("home");
   const featuredProjects = getProjects().filter(
     (project) => project.frontmatter.featured,
@@ -69,6 +73,9 @@ export function HomeRoute() {
           <span>{fm.hero_line1}</span>
           <span className="home-headline__accent">{fm.hero_line2}</span>
         </h2>
+        {signal ? (
+          <p className="home-hero__signal-greeting">{signal.greeting}</p>
+        ) : null}
         <p className="home-mission">{fm.mission}</p>
 
         {fm.stats && fm.stats.length > 0 && (

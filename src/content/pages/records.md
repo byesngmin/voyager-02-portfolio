@@ -1,7 +1,7 @@
 ---
 slug: records
 order: 6
-title: 항해 문서
+title: 사이트 기획과 개발 로그
 eyebrow: Voyage Records / Plan + Devlog
 summary: 사이트 기획서와 개발 로그를 한 흐름으로 묶어, 설계 의도와 실제 제작 이력을 함께 읽는 통합 문서 허브입니다.
 ---

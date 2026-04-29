@@ -25,6 +25,10 @@ export type PageFrontmatter = BaseFrontmatter & {
   contact?: { headline: string; body: string; href: string; label: string };
   highlights?: { title: string; body: string }[];
   quickLinks?: { label: string; href: string; note: string }[];
+  skills?: {
+    category: string;
+    items: { label: string; level: number }[];
+  }[];
 };
 
 export type ProjectFrontmatter = BaseFrontmatter & {
