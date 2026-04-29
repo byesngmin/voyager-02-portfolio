@@ -29,6 +29,35 @@ export type PageFrontmatter = BaseFrontmatter & {
     category: string;
     items: { label: string; level: number }[];
   }[];
+  profile?: {
+    name?: string;
+    role?: string;
+    tagline?: string;
+    bio?: string;
+    contact?: { label: string; value: string; icon?: string }[];
+  };
+  education?: {
+    school: string;
+    period: string;
+    description?: string;
+    points?: string[];
+  }[];
+  certifications?: {
+    name: string;
+    score?: string;
+    year?: string;
+  }[];
+  projects_exp?: {
+    title: string;
+    period: string;
+    role: string;
+    team?: string;
+    points?: string[];
+  }[];
+  tools?: {
+    category: string;
+    items: { name: string; color?: string; description: string }[];
+  }[];
 };
 
 export type ProjectFrontmatter = BaseFrontmatter & {

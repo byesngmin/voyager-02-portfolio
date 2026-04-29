@@ -1,55 +1,77 @@
 ---
 slug: resume
 order: 2
-title: 이력서 초안
-eyebrow: Resume / Draft Narrative Profile
-summary: 이후 교체 예정
-skills:
-  - category: 내러티브 설계
+title: 이력서
+eyebrow: Resume / Game Content Planner
+profile:
+  name: 황승민
+  role: 게임 콘텐츠 기획자 지망생
+  tagline: "콘텐츠 구조 자체가 플레이 경험이 되도록, 서사와 시스템을 하나로 묶는 기획자입니다."
+  bio: "기획 의도를 먼저 정의하고, 판단 근거까지 설명할 수 있는 기록 기반의 기획을 지향합니다."
+  contact:
+    - label: EMAIL
+      value: hellosngmin@gmail.com
+      icon: email
+    - label: 생년월일
+      value: (입력 예정)
+      icon: calendar
+    - label: 거주지
+      value: (입력 예정)
+      icon: location
+    - label: 병역
+      value: (입력 예정)
+      icon: shield
+education:
+  - school: 생성형 AI를 활용한 게임 기획자 과정
+    period: 2025.09 - 2026.04
+    description: 실무 중심의 게임 기획 프로세스 전반을 이수했습니다.
+    points:
+      - "시스템 기획: 코어 루프 설계, 경제 시스템 & 밸런싱"
+      - 팀 프로젝트 3회 진행 (전 프로젝트 팀장)
+      - AI 설계 도구를 활용한 기획 자동화 시스템 구축
+  - school: (학교명 입력)
+    period: 20XX.XX - 20XX.XX
+    description: (학력 설명을 입력하세요)
+    points: []
+certifications:
+  - name: (자격증명)
+    score: ""
+    year: "20XX"
+projects_exp:
+  - title: ORBITAL MEMORY (내러티브 퍼즐)
+    period: 2026.03 - 2026.04
+    role: "기획 | 서사 구조 설계"
+    team: "기획 1명"
+    points:
+      - 감정 목표를 기준으로 1분 플레이 구조 압축 및 정보 회수 타이밍 정의
+      - 단서 수집과 선택지 해금의 연결 방식 설계
+      - 세계관 노출 순서와 서사적 회수 장치 구성
+  - title: SIGNAL ARCHIVE (대화형 퀘스트)
+    period: 2026.02 - 2026.03
+    role: "기획 | 퀘스트 플로우 설계"
+    team: "기획 1명"
+    points:
+      - 선택지-정보 해금 구조 설계 (선택이 분기가 아닌 세계관 해석 조건)
+      - 퀘스트 대사와 UI 상태의 감정 톤 정리
+      - 재플레이 유도를 위한 분기 메모 구조 초안
+tools:
+  - category: DOCUMENTATION & OFFICE
     items:
-      - { label: 인터랙티브 스토리 구조, level: 5 }
-      - { label: 캐릭터 아크 & 보이스, level: 4 }
-      - { label: 정보 노출 타이밍 설계, level: 5 }
-  - category: 콘텐츠 기획
+      - name: Notion
+        color: "#2d2d2d"
+        description: 기획 의도와 플로우를 문서로 구조화하고 팀 공유에 활용합니다.
+      - name: Excel / Sheets
+        color: "#217346"
+        description: 밸런스 시트 설계 및 수치 기반 의사결정을 지원합니다.
+      - name: Figma
+        color: "#a259ff"
+        description: UI 와이어프레임 및 플로우 다이어그램 제작에 활용합니다.
+  - category: AI ASSISTANTS
     items:
-      - { label: 퀘스트 / 미션 설계, level: 4 }
-      - { label: 라이브 이벤트 기획, level: 3 }
-      - { label: UI 연출 & 피드백 설계, level: 4 }
-  - category: 문서화 & 협업
-    items:
-      - { label: 기획서 / 플로우 작성, level: 5 }
-      - { label: 크로스팀 커뮤니케이션, level: 4 }
-      - { label: 데이터 기반 회고, level: 3 }
+      - name: Claude
+        color: "#cc785c"
+        description: 시스템 기획 사양서 작성 및 복잡한 구조 설계 보조에 활용합니다.
+      - name: ChatGPT
+        color: "#10a37f"
+        description: 기획 아이디어 발산과 레퍼런스 데이터 분석에 활용합니다.
 ---
-## 한 줄 정의
-
-스토리텔링과 콘텐츠 결합을 통해 플레이어의 몰입 곡선을 설계하는 게임 콘텐츠 기획자.
-
-## 핵심 역량
-
-- **서사 구조 설계**: 세계관, 장면 전환, 정보 노출 타이밍을 설계해 플레이어가 이야기의 의미를 따라가게 만듭니다.
-- **콘텐츠 경험 기획**: 퀘스트, 대사, 오브젝트, 연출 피드백을 묶어 플레이가 감정 경험으로 이어지게 구성합니다.
-- **문서화와 구조화**: 기획 의도, 플레이 플로우, 피드백 포인트를 문서와 화면 구조로 동시에 정리합니다.
-- **짧은 구간 몰입 최적화**: 첫 화면, 첫 1분, 첫 전투, 첫 선택처럼 짧은 구간 안에서 강한 이해와 감정을 만들고자 합니다.
-
-## 작업 방식
-
-1. 경험 목표를 한 문장으로 정의합니다.
-2. 그 감정이 생기기 위해 필요한 콘텐츠와 시스템의 연결점을 찾습니다.
-3. 플레이어가 어떤 순서로 정보를 받아야 하는지 흐름을 설계합니다.
-4. 기획 의도와 실제 화면/동작이 일치하는지 검증합니다.
-
-## 선호하는 문제
-
-- 스토리와 시스템이 따로 노는 프로젝트를 하나의 경험으로 묶는 일
-- 짧은 플레이 타임 안에서 감정 곡선을 만들어야 하는 콘텐츠
-- UI, 연출, 텍스트가 모두 같은 메시지를 말하게 만드는 구조 설계
-
-## 현재 포트폴리오 사용법
-
-현재 이력서는 **실제 경력 데이터 투입 전 구조 초안**입니다. 이후에는 다음 정보를 추가하기 쉽게 설계합니다.
-
-- 프로젝트명 / 기간 / 역할 / 사용 도구
-- 성과 수치와 회고
-- 협업 방식과 의사결정 근거
-
