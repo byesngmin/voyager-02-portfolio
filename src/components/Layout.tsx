@@ -11,7 +11,7 @@ const navItems = [
   { to: "/self-intro", label: "자기소개서" },
   { to: "/projects", label: "프로젝트" },
   { to: "/game-history", label: "게임 이력" },
-  { to: "/records", label: "기획/로그", subtle: true },
+  { to: "/records", label: "사이트 기획과 개발 로그", subtle: true },
 ];
 
 export function Layout({ children }: LayoutProps) {
