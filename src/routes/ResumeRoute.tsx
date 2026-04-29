@@ -7,6 +7,11 @@ const CONTACT_ICONS: Record<string, React.ReactNode> = {
       <polyline points="2,4 10,11 18,4" />
     </svg>
   ),
+  phone: (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 4a1 1 0 0 1 1-1h2.5a1 1 0 0 1 .97.757l.7 2.8a1 1 0 0 1-.48 1.118L6.4 8.4a11 11 0 0 0 5.2 5.2l.725-1.29a1 1 0 0 1 1.118-.48l2.8.7A1 1 0 0 1 17 13.5V16a1 1 0 0 1-1 1h-1C7.163 17 3 12.837 3 8V4z" />
+    </svg>
+  ),
   calendar: (
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="3" width="16" height="15" rx="2" />
@@ -27,6 +32,15 @@ const CONTACT_ICONS: Record<string, React.ReactNode> = {
     </svg>
   ),
 };
+
+function Stars({ level, max = 3 }: { level: number; max?: number }) {
+  return (
+    <span className="skill-stars" aria-label={`${level}/${max}점`}>
+      {"★".repeat(level)}
+      {"☆".repeat(max - level)}
+    </span>
+  );
+}
 
 export function ResumeRoute() {
   const document = getPage("resume");
@@ -73,13 +87,13 @@ export function ResumeRoute() {
       {/* ── Two-column body ── */}
       <div className="resume-columns">
 
-        {/* Left: 학력 + 자격증 */}
+        {/* Left: 학력 + 경력 */}
         <div className="resume-col">
           {fm.education && fm.education.length > 0 && (
             <section className="resume-section">
               <h3 className="resume-section__title">
                 <span className="resume-section__icon" aria-hidden="true">◫</span>
-                학력 및 교육
+                학력
               </h3>
               <div className="edu-list">
                 {fm.education.map((edu, i) => (
@@ -93,9 +107,33 @@ export function ResumeRoute() {
                       )}
                       {edu.points && edu.points.length > 0 && (
                         <ul className="edu-item__points">
-                          {edu.points.map((pt, j) => (
-                            <li key={j}>{pt}</li>
-                          ))}
+                          {edu.points.map((pt, j) => <li key={j}>{pt}</li>)}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {fm.work_exp && fm.work_exp.length > 0 && (
+            <section className="resume-section">
+              <h3 className="resume-section__title">
+                <span className="resume-section__icon" aria-hidden="true">◈</span>
+                경력
+              </h3>
+              <div className="edu-list">
+                {fm.work_exp.map((w, i) => (
+                  <div key={i} className="edu-item">
+                    <div className="edu-item__marker" />
+                    <div className="edu-item__content">
+                      <h4 className="edu-item__school">{w.company}</h4>
+                      <p className="edu-item__period">{w.period}</p>
+                      <p className="edu-item__desc">{w.role}</p>
+                      {w.points && w.points.length > 0 && (
+                        <ul className="edu-item__points">
+                          {w.points.map((pt, j) => <li key={j}>{pt}</li>)}
                         </ul>
                       )}
                     </div>
@@ -108,19 +146,15 @@ export function ResumeRoute() {
           {fm.certifications && fm.certifications.length > 0 && (
             <section className="resume-section">
               <h3 className="resume-section__title">
-                <span className="resume-section__icon" aria-hidden="true">◈</span>
+                <span className="resume-section__icon" aria-hidden="true">✦</span>
                 자격증
               </h3>
               <div className="cert-list">
                 {fm.certifications.map((cert, i) => (
                   <div key={i} className="cert-item">
                     <strong>{cert.name}</strong>
-                    {cert.score && (
-                      <span className="cert-item__score">점수 {cert.score}</span>
-                    )}
-                    {cert.year && (
-                      <span className="cert-item__year">취득 {cert.year}</span>
-                    )}
+                    {cert.score && <span className="cert-item__score">점수 {cert.score}</span>}
+                    {cert.year && <span className="cert-item__year">취득 {cert.year}</span>}
                   </div>
                 ))}
               </div>
@@ -152,17 +186,13 @@ export function ResumeRoute() {
                       {proj.team && (
                         <div className="proj-team-chips">
                           {proj.team.split("/").map((t) => (
-                            <span key={t} className="proj-team-chip">
-                              {t.trim()}
-                            </span>
+                            <span key={t} className="proj-team-chip">{t.trim()}</span>
                           ))}
                         </div>
                       )}
                       {proj.points && proj.points.length > 0 && (
                         <ul className="proj-item__points">
-                          {proj.points.map((pt, j) => (
-                            <li key={j}>{pt}</li>
-                          ))}
+                          {proj.points.map((pt, j) => <li key={j}>{pt}</li>)}
                         </ul>
                       )}
                     </div>
@@ -180,6 +210,7 @@ export function ResumeRoute() {
           <h3 className="resume-section__title">
             <span className="resume-section__icon" aria-hidden="true">⚙</span>
             기술 역량 및 도구
+            <span className="skill-stars-legend">★ 상 &nbsp;★★ 중 &nbsp;★★★ 하 순</span>
           </h3>
           <div className="tool-grid">
             {fm.tools.map((cat) => (
@@ -194,7 +225,10 @@ export function ResumeRoute() {
                       {tool.name[0]}
                     </div>
                     <div className="tool-item__body">
-                      <strong>{tool.name}</strong>
+                      <div className="tool-item__name-row">
+                        <strong>{tool.name}</strong>
+                        {tool.level != null && <Stars level={tool.level} />}
+                      </div>
                       <p>{tool.description}</p>
                     </div>
                   </div>

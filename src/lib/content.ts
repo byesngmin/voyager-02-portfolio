@@ -54,9 +54,15 @@ export type PageFrontmatter = BaseFrontmatter & {
     team?: string;
     points?: string[];
   }[];
+  work_exp?: {
+    company: string;
+    period: string;
+    role: string;
+    points?: string[];
+  }[];
   tools?: {
     category: string;
-    items: { name: string; color?: string; description: string }[];
+    items: { name: string; color?: string; description: string; level?: number }[];
   }[];
 };
 
