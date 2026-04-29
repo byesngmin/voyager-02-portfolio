@@ -67,12 +67,27 @@ export function ProjectDetailRoute() {
   }
 
   return (
-    <section className="page-section">
+    <section className="page-section project-detail">
       <header className="page-header">
         <p className="page-header__eyebrow">{project.frontmatter.role}</p>
         <h2>{project.frontmatter.title}</h2>
         <p className="page-header__summary">{project.frontmatter.summary}</p>
       </header>
+
+      <div className="project-detail__meta-card">
+        <div className="project-detail__meta-item">
+          <p className="project-detail__meta-label">역할</p>
+          <p className="project-detail__meta-value">{project.frontmatter.role}</p>
+        </div>
+        <div className="project-detail__meta-item">
+          <p className="project-detail__meta-label">기간</p>
+          <p className="project-detail__meta-value">{project.frontmatter.period}</p>
+        </div>
+        <div className="project-detail__meta-item">
+          <p className="project-detail__meta-label">핵심 경험</p>
+          <p className="project-detail__meta-value">{project.frontmatter.core_experience}</p>
+        </div>
+      </div>
 
       <div className="data-grid">
         <article className="data-card">
@@ -88,6 +103,10 @@ export function ProjectDetailRoute() {
           <strong>{project.frontmatter.period}</strong>
         </article>
       </div>
+
+      <blockquote className="project-detail__story-link">
+        {project.frontmatter.story_system_link}
+      </blockquote>
 
       <section className="page-subsection">
         <div className="section-title">
@@ -123,7 +142,15 @@ export function ProjectDetailRoute() {
           </div>
         </section>
       ) : null}
+
+      <div className="project-detail__cta">
+        <Link className="site-nav__link" to="/projects">
+          모든 프로젝트 보기
+        </Link>
+        <Link className="site-nav__link site-nav__link--subtle" to="/records">
+          기획/로그 보기
+        </Link>
+      </div>
     </section>
   );
 }
-

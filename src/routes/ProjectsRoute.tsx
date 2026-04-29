@@ -1,10 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { MarkdownPage } from "../components/MarkdownPage";
 import { getPage, getProjects } from "../lib/content";
+import { getSignal } from "../lib/signals";
+
+function hasSignalEmphasis(tags: string[] | undefined, emphasis: string[]) {
+  return tags?.some((tag) => emphasis.includes(tag)) ?? false;
+}
 
 export function ProjectsRoute() {
+  const [searchParams] = useSearchParams();
+  const signalKey = searchParams.get("signal");
+  const signal = getSignal(signalKey);
+  const signalSearch = signal && signalKey ? `?signal=${encodeURIComponent(signalKey)}` : "";
   const document = getPage("projects");
-  const projects = getProjects();
+  const baseProjects = getProjects();
+  const projects = signal
+    ? [...baseProjects].sort((left, right) => {
+        const leftTags = (left.frontmatter as { tags?: string[] })
+          .tags as string[] | undefined;
+        const rightTags = (right.frontmatter as { tags?: string[] })
+          .tags as string[] | undefined;
+        const leftPriority = hasSignalEmphasis(leftTags, signal.emphasis) ? 0 : 1;
+        const rightPriority = hasSignalEmphasis(rightTags, signal.emphasis) ? 0 : 1;
+
+        return leftPriority - rightPriority;
+      })
+    : baseProjects;
+  const withSignal = (href: string) =>
+    signalSearch ? `${href}${signalSearch}` : href;
 
   if (!document) {
     return null;
@@ -21,7 +44,7 @@ export function ProjectsRoute() {
           <Link
             className="project-card"
             key={project.slug}
-            to={`/projects/${project.slug}`}
+            to={withSignal(`/projects/${project.slug}`)}
           >
             <p className="project-card__meta">
               {project.frontmatter.period} / {project.frontmatter.role}
@@ -35,4 +58,3 @@ export function ProjectsRoute() {
     </MarkdownPage>
   );
 }
-

@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getPage, getProjects } from "../lib/content";
+import { getSignal } from "../lib/signals";
 
 export function HomeRoute() {
+  const [searchParams] = useSearchParams();
+  const signalKey = searchParams.get("signal");
+  const signal = getSignal(signalKey);
+  const signalSearch = signal && signalKey ? `?signal=${encodeURIComponent(signalKey)}` : "";
   const document = getPage("home");
   const featuredProjects = getProjects().filter(
     (project) => project.frontmatter.featured,
@@ -12,6 +17,8 @@ export function HomeRoute() {
   }
 
   const { frontmatter } = document;
+  const withSignal = (href: string) =>
+    signalSearch ? `${href}${signalSearch}` : href;
 
   return (
     <section className="home-page">
@@ -19,6 +26,9 @@ export function HomeRoute() {
         <div className="home-hero__copy">
           <p className="home-hero__eyebrow">{frontmatter.eyebrow}</p>
           <h2>{frontmatter.title}</h2>
+          {signal ? (
+            <p className="home-hero__signal-greeting">{signal.greeting}</p>
+          ) : null}
           <p className="home-hero__summary">{frontmatter.summary}</p>
           {frontmatter.mission ? (
             <blockquote className="signal-quote">{frontmatter.mission}</blockquote>
@@ -51,7 +61,7 @@ export function HomeRoute() {
 
       <section className="planet-grid">
         {frontmatter.quickLinks?.map((item) => (
-          <Link className="planet-card" key={item.href} to={item.href}>
+          <Link className="planet-card" key={item.href} to={withSignal(item.href)}>
             <p className="planet-card__eyebrow">DESTINATION</p>
             <h3>{item.label}</h3>
             <p>{item.note}</p>
@@ -82,4 +92,3 @@ export function HomeRoute() {
     </section>
   );
 }
-
