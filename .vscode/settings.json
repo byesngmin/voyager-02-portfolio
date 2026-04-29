@@ -1,0 +1,5 @@
+{
+  "browser.onOpenLink": "embedded",
+  "livePreview.defaultPreviewPath": "http://localhost:5173",
+  "livePreview.openPreviewTarget": "embeddedPreview"
+}
