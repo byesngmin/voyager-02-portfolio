@@ -36,11 +36,11 @@ work_exp:
     role: 학습매니저
     points: []
   - company: 맘스터치 김천혁신점
-    period: 2015.10 ~ 2020.02
+    period: 2015.10. ~ 2020.02.
     role: 아르바이트
     points: []
   - company: 홈플러스 병점점 보안팀
-    period: 2012.12 ~ 2013.03
+    period: 2012.12. ~ 2013.03.
     role: 아르바이트
     points: []
 projects_exp:

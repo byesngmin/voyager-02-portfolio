@@ -943,23 +943,18 @@ dialog.nav-dialog[open] {
   position: fixed;
   inset: 0;
   z-index: 30;
-  display: grid;
-  place-items: center;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background:
     radial-gradient(circle at 50% 50%, rgba(127, 244, 255, 0.18), transparent 28%),
     linear-gradient(180deg, rgba(2, 7, 17, 0.98), rgba(2, 6, 14, 0.96));
-  text-align: center;
   padding: 2rem;
 }
 
-.intro-gate__stars,
-.intro-gate__ship,
-.intro-gate__orbit {
-  position: absolute;
-}
-
 .intro-gate__stars {
+  position: absolute;
   inset: 0;
   background-image:
     radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.82) 0, transparent 0.15rem),
@@ -969,32 +964,21 @@ dialog.nav-dialog[open] {
   opacity: 0.55;
 }
 
-.intro-gate__ship {
-  width: 8rem;
-  height: 8rem;
-  animation: introLift 1600ms ease-out forwards;
-}
-
-.intro-gate__orbit {
-  inset: -1rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 50%;
-}
-
-.intro-gate__core {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  margin: 3rem auto 0;
-  border-radius: 0.45rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
-  transform: rotate(45deg);
-  box-shadow: 0 0 28px rgba(127, 244, 255, 0.45);
+.intro-gate__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .intro-gate__copy {
-  position: relative;
-  z-index: 1;
+  margin: 0 auto;
+  text-align: center;
+  transition: opacity 1s ease-in-out;
   max-width: 36rem;
 }
 
@@ -1009,16 +993,108 @@ dialog.nav-dialog[open] {
   line-height: var(--lh-body);
 }
 
-.intro-gate__skip {
+.intro-gate__voyager-area {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 2rem;
+}
+
+.intro-gate__voyager-wrapper {
   position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  padding: 0.65rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-gate__ship {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-gate__core {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.45rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+  transform: rotate(45deg);
+  box-shadow: 0 0 28px rgba(127, 244, 255, 0.45);
+}
+
+.intro-gate__signal-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 8rem;
+  border: none;
+  background: transparent;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  outline: none;
+}
+
+.intro-gate__signal-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: signalPulse 2s ease-out infinite;
+}
+
+.intro-gate__signal-ring.delay-1 {
+  animation-delay: 1s;
+}
+
+.intro-gate__signal-text {
+  position: relative;
+  z-index: 2;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(127, 244, 255, 0.8);
+  animation: textPulse 2s ease-in-out infinite;
+}
+
+.intro-gate__loading-text {
+  position: absolute;
+  bottom: -3rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@keyframes signalPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 
 @keyframes routePulse {
@@ -1042,22 +1118,6 @@ dialog.nav-dialog[open] {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes introLift {
-  0% {
-    opacity: 0;
-    transform: translateY(2rem) scale(0.88);
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(-1rem) scale(1);
   }
 }
 
