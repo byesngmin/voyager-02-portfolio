@@ -16,23 +16,23 @@ profile:
       value: 010-3083-5832
       icon: phone
     - label: 거주지
-      value: 서울시 강동구 암사동
+      value: 서울시 강동구 암사동 476-20 201-4호
       icon: location
     - label: 병역
-      value: (입력 예정)
+      value: 2015.06. ~ 2017.03.육군 병장 만기 전역
       icon: shield
 education:
   - school: 고려대학교 문화콘텐츠전공 / 북한학과
-    period: 2012.03 ~ 2022.02
-    description: 문화콘텐츠 학사 졸업.
+    period: 2012.03. ~ 2022.02.
+    description: 문화콘텐츠 / 북한학 학사 졸업
     points: []
   - school: 반송고등학교 인문계
-    period: 2009.03 ~ 2012.02
-    description: 인문계 졸업.
+    period: 2009.03. ~ 2012.02.
+    description: 인문계 졸업
     points: []
 work_exp:
   - company: 디벨로켓
-    period: 2025.07 ~ 2026.05
+    period: 2025.07. ~ 2026.05.
     role: 학습매니저
     points: []
   - company: 맘스터치 김천혁신점
