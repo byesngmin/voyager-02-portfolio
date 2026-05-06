@@ -5,6 +5,8 @@ type LayoutProps = {
   children: ReactNode;
 };
 
+const INTRO_KEY = 'voyager02-intro-seen';
+
 const navItems = [
   { to: "/", label: "개요" },
   { to: "/resume", label: "이력서" },
@@ -17,6 +19,13 @@ const navItems = [
 export function Layout({ children }: LayoutProps) {
   const [navOpen, setNavOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const handleReplayIntro = () => {
+    try {
+      sessionStorage.removeItem(INTRO_KEY);
+    } catch {}
+
+    window.location.reload();
+  };
 
   useEffect(() => {
     if (navOpen) {
@@ -87,6 +96,15 @@ export function Layout({ children }: LayoutProps) {
           >
             <span aria-hidden="true">☰</span>
             <span>메뉴</span>
+          </button>
+          <button
+            className="intro-replay-btn"
+            type="button"
+            onClick={handleReplayIntro}
+            aria-label="인트로 다시보기"
+          >
+            <span className="intro-replay-btn__icon" aria-hidden="true" />
+            <span className="intro-replay-btn__label">인트로 다시보기</span>
           </button>
         </div>
       </header>
