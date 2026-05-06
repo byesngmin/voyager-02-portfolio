@@ -99,7 +99,7 @@ export function IntroGate({ children }: IntroGateProps) {
           <div className="intro-gate__stars" aria-hidden="true" />
           
           <div className="intro-gate__content">
-            <div className="intro-gate__copy" style={{ opacity: progress === 100 ? 1 : 0.4 }}>
+            <div className="intro-gate__copy">
               <p className="intro-gate__eyebrow">VOYAGER-02 / SIGNAL WAKE</p>
               <h1>서사와 콘텐츠가 맞물리는 항해를 시작합니다.</h1>
               <p>
@@ -122,7 +122,8 @@ export function IntroGate({ children }: IntroGateProps) {
                 </div>
                 
                 {progress === 100 && (
-                  <button 
+                  <>
+                    <button
                     className="intro-gate__signal-btn" 
                     onClick={handleEnter} 
                     tabIndex={0} 
@@ -131,8 +132,9 @@ export function IntroGate({ children }: IntroGateProps) {
                   >
                     <span className="intro-gate__signal-ring"></span>
                     <span className="intro-gate__signal-ring delay-1"></span>
+                    </button>
                     <span className="intro-gate__signal-text">ENTER</span>
-                  </button>
+                  </>
                 )}
 
                 {progress < 100 && (

@@ -1,10 +1,20 @@
-import { marked } from "marked";
+import { marked, Renderer } from "marked";
 import { parse as parseYaml } from "yaml";
 
 marked.setOptions({
   breaks: true,
   gfm: true,
 });
+
+const renderer = new Renderer();
+const _defaultCode = renderer.code.bind(renderer);
+renderer.code = (token) => {
+  if (token.lang === "mermaid") {
+    return '<div class="mermaid">' + token.text + "</div>";
+  }
+  return _defaultCode(token);
+};
+marked.use({ renderer });
 
 type BaseFrontmatter = {
   title: string;

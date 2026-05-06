@@ -118,9 +118,9 @@ export function ResumeRoute() {
           )}
 
           {fm.work_exp && fm.work_exp.length > 0 && (
-            <section className="resume-section">
+            <section className="resume-section" style={{ marginTop: '1.05rem' }}>
               <h3 className="resume-section__title">
-                <span className="resume-section__icon" aria-hidden="true">◈</span>
+                <span className="resume-section__icon" aria-hidden="true">◇</span>
                 경력
               </h3>
               <div className="edu-list">
