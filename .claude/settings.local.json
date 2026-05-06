@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(*)",
       "Read(*)",
@@ -21,7 +22,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"c:/Users/user/Documents/New project 2/.claude/hooks/gemini-router.js\""
+            "command": "node \"d:/Github/voyager-02-portfolio/.claude/hooks/gemini-router.js\""
           }
         ]
       }
@@ -31,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"c:/Users/user/Documents/New project 2/.claude/hooks/agent-guard.js\""
+            "command": "node \"d:/Github/voyager-02-portfolio/.claude/hooks/agent-guard.js\""
           }
         ]
       }
@@ -41,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"c:/Users/user/Documents/New project 2/.claude/hooks/post-task-check.js\""
+            "command": "node \"d:/Github/voyager-02-portfolio/.claude/hooks/post-task-check.js\""
           }
         ]
       }
