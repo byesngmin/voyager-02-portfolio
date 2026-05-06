@@ -120,7 +120,7 @@ export function ResumeRoute() {
           {fm.work_exp && fm.work_exp.length > 0 && (
             <section className="resume-section" style={{ marginTop: '2.625rem' }}>
               <h3 className="resume-section__title">
-                <span className="resume-section__icon" aria-hidden="true">◇</span>
+                <span className="resume-section__icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '1em', height: '1em', verticalAlign: '-0.125em', display: 'inline-block' }}><path d="M10 2 L18 10 L10 18 L2 10 Z" /></svg></span>
                 경력
               </h3>
               <div className="edu-list">

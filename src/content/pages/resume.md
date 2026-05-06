@@ -22,49 +22,32 @@ profile:
       value: 2015.06. ~ 2017.03.육군 병장 만기 전역
       icon: shield
 education:
+  - school: 반송고등학교
+    period: 2009.03. ~ 2012.02.
+    description: 인문계 졸업
+    points: []
   - school: 고려대학교 문화콘텐츠전공 / 북한학과
     period: 2012.03. ~ 2022.02.
     description: 문화콘텐츠 / 북한학 학사 졸업
     points: []
-  - school: 반송고등학교 인문계
-    period: 2009.03. ~ 2012.02.
-    description: 인문계 졸업
-    points: []
 work_exp:
+  - company: 홈플러스 병점점
+    period: 2012.12. ~ 2013.03.
+    role: 보안팀
+    points: []
+  - company: 킹왕짱 PC방 전주혁신점
+    period: 2013.12. ~ 2015.05.
+    role: 매장 관리
+    points: []
+  - company: 맘스터치 김천혁신점
+    period: 2015.10. ~ 2020.02.
+    role: 주방 및 홀
+    points: []
   - company: 디벨로켓
     period: 2025.07. ~ 2026.05.
     role: 학습매니저
     points: []
-  - company: 맘스터치 김천혁신점
-    period: 2015.10. ~ 2020.02.
-    role: 아르바이트
-    points: []
-  - company: 홈플러스 병점점 보안팀
-    period: 2012.12. ~ 2013.03.
-    role: 아르바이트
-    points: []
 projects_exp:
-  - title: 퍼즐게임 ICH 개발
-    period: "[임의] 2025.XX ~ 2025.XX"
-    role: "[임의] 기획 | 시스템 설계"
-    team: "[임의] 기획 X명 / 프로그래밍 X명"
-    points:
-      - "[임의] 퍼즐 구조 및 핵심 루프 기획"
-      - "[임의] ICH 시스템 사양서 작성"
-  - title: 로블록스 공포 Obby
-    period: "[임의] 2025.XX ~ 2025.XX"
-    role: "[임의] 기획 | 레벨 설계"
-    team: "[임의] 기획 X명 / 프로그래밍 X명"
-    points:
-      - "[임의] 공포 Obby 레벨 구조 및 긴장감 곡선 설계"
-      - "[임의] 로블록스 플랫폼 특성에 맞춘 인터랙션 기획"
-  - title: 트릭컬 스토리콘텐츠 역기획
-    period: "[임의] 2025.XX ~ 2025.XX"
-    role: "[임의] 기획 | 스토리 구조 분석"
-    team: "[임의] 기획 X명"
-    points:
-      - "[임의] 트릭컬 게임의 스토리 구조를 역기획 방식으로 분석 및 재구성"
-      - "[임의] 캐릭터 아크와 감정 곡선 정리"
   - title: 스토리플레이 로맨스판타지
     period: "[임의] 2025.XX ~ 2025.XX"
     role: "[임의] 기획 | 인터랙티브 스토리"
@@ -72,6 +55,27 @@ projects_exp:
     points:
       - "[임의] 로맨스판타지 장르 인터랙티브 스토리 구조 설계"
       - "[임의] 분기 선택지 및 감정 목표 정의"
+  - title: 로블록스 공포 Obby
+    period: "[임의] 2025.XX ~ 2025.XX"
+    role: "[임의] 기획 | 레벨 설계"
+    team: "[임의] 기획 X명 / 프로그래밍 X명"
+    points:
+      - "[임의] 공포 Obby 레벨 구조 및 긴장감 곡선 설계"
+      - "[임의] 로블록스 플랫폼 특성에 맞춘 인터랙션 기획"
+  - title: 퍼즐게임 ICH 개발
+    period: "[임의] 2025.XX ~ 2025.XX"
+    role: "[임의] 기획 | 시스템 설계"
+    team: "[임의] 기획 X명 / 프로그래밍 X명"
+    points:
+      - "[임의] 퍼즐 구조 및 핵심 루프 기획"
+      - "[임의] ICH 시스템 사양서 작성"
+  - title: 트릭컬 스토리콘텐츠 역기획
+    period: "[임의] 2025.XX ~ 2025.XX"
+    role: "[임의] 기획 | 스토리 구조 분석"
+    team: "[임의] 기획 X명"
+    points:
+      - "[임의] 트릭컬 게임의 스토리 구조를 역기획 방식으로 분석 및 재구성"
+      - "[임의] 캐릭터 아크와 감정 곡선 정리"
   - title: 수집/방치형 게임
     period: "[임의] 2025.XX ~ 진행중"
     role: "[임의] 기획 | 경제 시스템 설계"
@@ -85,55 +89,85 @@ tools:
       - name: Google Docs
         color: "#4285f4"
         level: 3
-        description: "[임의] SpreadSheet, Slide, Document 등 구글 워크스페이스 전반을 기획 문서 작성에 활용합니다."
+        description: |
+          구글 워크스페이스 전반을 활용한 인원 관리 실무 경험 및 문서 작성에 활용
+          SpreadSheet | VLOOKUP 등의 함수와 필터 등의 앱 기능을 활용한 관리 문서 및 테이블 구조 작성/관리 경험
+          Slide | 마스터 슬라이드 등 앱 기능을 활용한 통일된 발표 자료 및 기획서 슬라이드를 효율적으로 작성 경험 
+          Document | 스타일과 표 등 가독성과 기능성을 겸비한 정부 공고 대응 제안서 작성 경험
       - name: MS Office
         color: "#d73b02"
         level: 2
-        description: "[임의] Excel, Word, PowerPoint를 사용해 기획서 및 데이터 시트를 구성합니다."
+        description: |
+          Excel | VLOOKUP·피벗 테이블 활용 및 CSV 파싱·관리 기반 데이터 문서 작성
+          Word | 기획서 및 사양서 형식에 맞춘 문서 작성·편집
+          PowerPoint | 기획 발표 및 팀 내 검토용 프레젠테이션 자료 구성
   - category: 개발 도구
     items:
       - name: Unity
         color: "#2d3748"
         level: 1
-        description: "[임의] Unity 2021 및 Unity 6 기반 프로토타입 제작 경험이 있습니다."
-      - name: Antigravity
+        description: |
+          콘텐츠 제작 | 레벨 디자인·오브젝트 배치, 스프라이트 관리, UI 제작, 시네머신·타임라인 실습
+          시스템 활용 | CSV 파싱 기반 외부 테이블 연동, Input 시스템 구축, C# 기초 문법 활용
+          기획 문서 | 기획자 대상 유니티 교안 직접 작성
+          협업 | Unity 2021·6 환경에서 팀 협업 프로젝트 2회 수행
+      - name: VScode, Antigravity
         color: "#6c4dc4"
         level: 2
-        description: "[임의] AI 에이전트 기반 도구로, 게임 시스템 프로토타입 신속 제작에 활용합니다."
-      - name: 기타 오픈소스 AI
-        color: "#4a5568"
-        level: 2
-        description: "[임의] 다양한 오픈소스 AI 도구를 기획 보조 및 콘텐츠 생성에 활용합니다."
+        description: |
+          문서 작업 | 마크다운 기반 기획 문서 작성 및 관리
+          바이브코딩 | 수업 관련 앱 다수 기획·개발 및 이 포트폴리오 사이트 개발
+          기능 확장 | 익스텐션 활용을 통한 워크플로우 기능 확장
+          AI 오케스트레이션 | 다중 AI 에이전트 연동 작업 파이프라인 구축
       - name: MapleStory World
         color: "#e84040"
         level: 2
-        description: "[임의] 메이플스토리 월드 플랫폼에서 게임 기획 및 구현 경험이 있습니다."
+        description: "메이플스토리 월드 플랫폼에서 게임 기획 및 구현을 위한 LUA 및 엔진 사용법 교안 작성"
   - category: 기타
     items:
       - name: Git
         color: "#f05032"
         level: 1
-        description: "[임의] 버전 관리 및 팀 협업 기반 작업에 기초 수준으로 활용합니다."
+        description: |
+          Branch | 브랜치 기반 버전 관리로 개인 프로젝트 및 협업 작업 이력 관리
+          Actions | CI/CD 자동화 워크플로우 구축 및 배포 파이프라인 운영 경험
+          Issues | 작업 분류·이슈 추적 및 팀 협업 관리에 활용
+          IDE 연동 | 안티그래비티, VSCODE, 옵시디언 등과 연동해 마크다운 문서 작업 및 바이브코딩 결과물 배포·관리
       - name: Figma
         color: "#a259ff"
         level: 2
-        description: "[임의] UI 와이어프레임 및 기획 플로우 시각화에 활용합니다."
+        description: |
+          아래 기능 활용 및 피그마 활용 교안 작성 경험
+          와이어프레임 | 프로젝트 기획 단계 UI 구조 및 화면 플로우 설계
+          디자인 자료 | 오토 레이아웃·플러그인 활용 디자인 시스템 자료 제작
+          프로토타입 | 인터랙션 연결을 통한 기능 흐름 시각화 및 검토용 프로토타입 제작
   - category: AI
     items:
+      - name: AI 공통 역량
+        color: "#4a5568"
+        level: 3
+        description: |
+          작업영역 | Projects·COWORK 등 각 서비스 앱 기능 활용 작업영역 구성·관리
+          프롬프트 엔지니어링 | COT·TOT 등 이론 기반 구조화 프롬프트 작성
+          에이전트 설계 | 토큰 효율·능률 향상을 위한 에이전트 구조 및 하네스 직접 설계·적용
+          API·CLI 활용 | 각 서비스 API 확보 및 CLI·SDK 환경 직접 활용
+          오픈소스 학습 및 활용 | Hugging Face·GitHub 모델 탐색, Ollama·LM Studio 로컬 실행, Stable Diffusion·ComfyUI 이미지 생성 워크플로우 구축
       - name: Gemini
         color: "#4285f4"
         level: 3
-        description: "[임의] 고도화된 프롬프트 엔지니어링으로 기획 로직 및 아이디어를 즉각 생성합니다."
+        description: "Gems | 작업별 특화 봇 다수 설계·배포 및 운영"
       - name: ChatGPT / Codex
         color: "#10a37f"
         level: 3
-        description: "[임의] 방대한 데이터 크롤링 및 분석을 통한 기획 소스 확보에 활용합니다."
+        description: "Codex CLI | 바이브코딩 및 소스 코드 자동화에 특화 활용"
       - name: Claude / ClaudeCode
         color: "#cc785c"
         level: 3
-        description: "[임의] 바이브코딩으로 복잡한 시스템 기획 사양의 코드 구현 및 검증에 활용합니다."
+        description: "ClaudeCode | 이 포트폴리오 사이트를 ClaudeCode CLI로 직접 개발·운영"
       - name: NotebookLM
         color: "#1a73e8"
         level: 2
-        description: "[임의] 리서치 자료 정리 및 기획 인사이트 도출에 활용합니다."
+        description: |
+          RAG 환경 | 리서치 자료 기반 RAG 환경 구축 및 소스 관리
+          콘텐츠 생성 | 신뢰성 있는 보고서·발표 자료·학습 자료(퀴즈 등) 생성 및 관리
 ---
