@@ -1,4 +1,4 @@
-import { marked, Renderer } from "marked";
+import { marked, Renderer, Tokens } from "marked";
 import { parse as parseYaml } from "yaml";
 
 marked.setOptions({
@@ -13,6 +13,22 @@ renderer.code = (token) => {
     return '<div class="mermaid">' + token.text + "</div>";
   }
   return _defaultCode(token);
+};
+renderer.heading = function ({ tokens, depth, text }: Tokens.Heading): string {
+  const html = this.parser.parseInline(tokens) || text;
+  const plain = html.replace(/<[^>]+>/g, "").trim();
+  const id = plain
+    .toLowerCase()
+    .replace(/[^\w가-힣\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  if (depth === 2) {
+    return `<h2 id="${id}" data-chapter data-chapter-title="${plain}">${html}</h2>`;
+  }
+
+  return `<h${depth}>${html}</h${depth}>`;
 };
 marked.use({ renderer });
 

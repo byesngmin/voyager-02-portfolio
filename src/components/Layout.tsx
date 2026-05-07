@@ -1,19 +1,24 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
+type NavItem = {
+  to: string;
+  label: string;
+  subtle?: boolean;
+};
+
 const INTRO_KEY = 'voyager02-intro-seen';
 
-const navItems = [
+const navItems: NavItem[] = [
   { to: "/", label: "개요" },
   { to: "/resume", label: "이력서" },
   { to: "/self-intro", label: "자기소개서" },
   { to: "/projects", label: "프로젝트" },
   { to: "/game-history", label: "게임 이력" },
-  { to: "/records", label: "사이트 기획과 개발 로그", subtle: true },
 ];
 
 export function Layout({ children }: LayoutProps) {
@@ -120,6 +125,9 @@ export function Layout({ children }: LayoutProps) {
             <span className="intro-replay-btn__icon" aria-hidden="true" />
             <span className="intro-replay-btn__label">인트로 다시보기</span>
           </button>
+          <Link className="devlog-shortcut-btn" to="/records">
+            개발 로그
+          </Link>
         </div>
       </header>
 

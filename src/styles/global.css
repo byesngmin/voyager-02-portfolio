@@ -2535,3 +2535,264 @@ dialog.nav-dialog[open] {
   a[href]::after { content: ' (' attr(href) ')'; font-size: 9pt; color: #555; }
 }
 
+/* ── Self-Intro Page ── */
+
+/* 레이아웃 */
+.si-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11rem;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 본문 타이포그래피 */
+.si-body {
+  min-width: 0;
+}
+
+.si-body p,
+.si-body li {
+  font-size: 1.0625rem;
+  line-height: 1.82;
+  letter-spacing: 0.005em;
+  color: rgba(230, 238, 246, 0.82);
+}
+
+.si-body > p,
+.si-body > ul,
+.si-body > ol {
+  max-width: 34em;
+}
+
+/* 챕터 헤딩 */
+.si-body h2[data-chapter] {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(127, 244, 255, 0.22);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  letter-spacing: 0.03em;
+  color: #e9fdff;
+}
+
+.si-body h2[data-chapter]:first-of-type {
+  margin-top: 1.5rem;
+  border-top: none;
+}
+
+/* 신호 인용구 blockquote */
+.si-body blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 1.1rem 3.6rem;
+  background: linear-gradient(90deg, rgba(127, 244, 255, 0.1), transparent 35%),
+              rgba(6, 16, 31, 0.7);
+  border-left: 1px solid rgba(127, 244, 255, 0.38);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  box-shadow: inset 0 0 0 1px rgba(127, 244, 255, 0.07);
+}
+
+.si-body blockquote::before {
+  content: 'SIGNAL';
+  position: absolute;
+  left: 0.85rem;
+  top: 1rem;
+  font: 700 0.6rem/1 var(--font-display);
+  letter-spacing: 0.2em;
+  color: rgba(127, 244, 255, 0.75);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.si-body blockquote p {
+  margin: 0;
+  color: #f0faff;
+  font-size: 1rem;
+}
+
+/* 강조 텍스트 */
+.si-body strong {
+  color: #f4f6f8;
+  font-weight: 700;
+}
+
+/* 수평선 — 구간 구분 */
+.si-body hr {
+  border: none;
+  border-top: 1px dashed rgba(150, 198, 255, 0.22);
+  margin: 2.5rem 0;
+}
+
+/* 이미지 */
+.si-body img {
+  max-width: 100%;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  margin: 1.2rem 0;
+}
+
+/* ── 챕터 레일 ── */
+.si-rail {
+  position: sticky;
+  top: clamp(4.5rem, 10vh, 7rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: start;
+}
+
+/* 진행 트랙 */
+.si-track {
+  position: relative;
+  width: 2px;
+  height: min(56vh, 34rem);
+  margin: 0 auto;
+  background: rgba(127, 244, 255, 0.1);
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.si-track__fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-warm) 100%);
+  border-radius: 999px;
+  transform-origin: 50% 0;
+  transform: scaleY(var(--si-progress, 0));
+  box-shadow: 0 0 12px rgba(127, 244, 255, 0.35);
+  transition: transform 120ms linear;
+}
+
+.si-track__dot {
+  position: absolute;
+  left: 50%;
+  top: var(--si-dot-pos, 0%);
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: rgba(127, 244, 255, 0.28);
+  border: 1px solid rgba(127, 244, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: background 220ms ease, box-shadow 220ms ease;
+}
+
+.si-track__dot[data-active='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(127, 244, 255, 0.65);
+}
+
+/* 챕터 목록 */
+.si-chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.si-chapter-item {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--r-sm);
+  color: var(--text-faint);
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+  text-decoration: none;
+}
+
+.si-chapter-item:hover {
+  color: var(--text-muted);
+  background: rgba(127, 244, 255, 0.05);
+}
+
+.si-chapter-item[data-active='true'] {
+  color: #e9fdff;
+  background: rgba(127, 244, 255, 0.08);
+  transform: translateX(2px);
+}
+
+.si-chapter-item__code {
+  display: block;
+  font: 700 0.64rem/1 var(--font-display);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: opacity 180ms ease;
+}
+
+.si-chapter-item[data-active='true'] .si-chapter-item__code {
+  opacity: 1;
+}
+
+.si-chapter-item__wp {
+  display: block;
+  font: 500 0.68rem/1.3 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.06em;
+  color: inherit;
+}
+
+/* ── 챕터 테마 (CSS variable 교체) ── */
+[data-si-theme='signal'] {
+  --accent: #ffca6f;
+  --accent-warm: #ff8760;
+}
+
+[data-si-theme='burn'] {
+  --accent: #ff8760;
+  --accent-warm: #ffca6f;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 860px) {
+  .si-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .si-rail {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    order: -1;
+    overflow-x: auto;
+  }
+
+  .si-track {
+    display: none;
+  }
+
+  .si-chapter-list {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 0.25rem;
+    overflow-x: auto;
+  }
+
+  .si-chapter-item {
+    white-space: nowrap;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .si-body h2[data-chapter] {
+    margin-top: 3.5rem;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .si-track__fill {
+    transition: none;
+    transform: scaleY(1);
+  }
+
+  .si-track__dot,
+  .si-chapter-item {
+    transition: none;
+  }
+}
+

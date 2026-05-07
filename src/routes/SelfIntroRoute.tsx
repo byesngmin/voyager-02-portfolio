@@ -1,13 +1,9 @@
-import { MarkdownPage } from "../components/MarkdownPage";
+import { SelfIntroPage } from "../components/SelfIntroPage";
 import { getPage } from "../lib/content";
 
 export function SelfIntroRoute() {
   const document = getPage("self-intro");
-
-  if (!document) {
-    return null;
-  }
-
-  return <MarkdownPage document={document} />;
+  if (!document) return null;
+  return <SelfIntroPage document={document} />;
 }
 
