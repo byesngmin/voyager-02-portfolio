@@ -210,7 +210,7 @@ export function ResumeRoute() {
           <h3 className="resume-section__title">
             <span className="resume-section__icon" aria-hidden="true">⚙</span>
             기술 역량 및 도구
-            <span className="skill-stars-legend">★ 상 &nbsp;★★ 중 &nbsp;★★★ 하 순</span>
+            <span className="skill-stars-legend">★ 하 &nbsp;★★ 중 &nbsp;★★★ 상 순</span>
           </h3>
           <div className="tool-grid">
             {fm.tools.map((cat) => (
