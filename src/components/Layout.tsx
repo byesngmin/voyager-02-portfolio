@@ -18,6 +18,7 @@ const navItems = [
 
 export function Layout({ children }: LayoutProps) {
   const [navOpen, setNavOpen] = useState(false);
+  const [showTop, setShowTop] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const handleReplayIntro = () => {
     try {
@@ -76,6 +77,19 @@ export function Layout({ children }: LayoutProps) {
 
     return undefined;
   }, [navOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="app-shell">
@@ -175,6 +189,14 @@ export function Layout({ children }: LayoutProps) {
         <p>Voyager-02 Portfolio v1</p>
         <p>3일 x 4시간, 총 12시간을 기준으로 설계된 GitHub Pages SPA</p>
       </footer>
+      <button
+        className={"back-to-top-btn" + (showTop ? " is-visible" : "")}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="맨 위로"
+        type="button"
+      >
+        ↑
+      </button>
     </div>
   );
 }

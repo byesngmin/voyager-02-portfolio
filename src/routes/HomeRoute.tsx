@@ -1,8 +1,9 @@
+import { useEffect, useRef, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPage, getProjects } from "../lib/content";
 import { getSignal } from "../lib/signals";
 
-const ICONS: Record<string, React.ReactNode> = {
+const ICONS: Record<string, ReactNode> = {
   target: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
@@ -50,6 +51,58 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
+type RevealSectionProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+function RevealSection({ children, className }: RevealSectionProps) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+
+    if (!node) {
+      return undefined;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      node.classList.add("is-visible");
+
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        node.classList.add("is-visible");
+        observer.unobserve(node);
+      },
+      { threshold: 0.12 },
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div
+      ref={sectionRef}
+      className={["section-reveal", className].filter(Boolean).join(" ")}
+    >
+      {children}
+    </div>
+  );
+}
+
 export function HomeRoute() {
   const [searchParams] = useSearchParams();
   const signalKey = searchParams.get("signal");
@@ -67,109 +120,117 @@ export function HomeRoute() {
     <section className="home-page">
 
       {/* ── Hero ── */}
-      <section className="home-hero-v2">
-        <p className="home-hero__eyebrow">{fm.eyebrow}</p>
-        <h2 className="home-headline">
-          <span>{fm.hero_line1}</span>
-          <span className="home-headline__accent">{fm.hero_line2}</span>
-        </h2>
-        {signal ? (
-          <p className="home-hero__signal-greeting">{signal.greeting}</p>
-        ) : null}
-        <p className="home-mission">{fm.mission}</p>
+      <RevealSection>
+        <section className="home-hero-v2">
+          <p className="home-hero__eyebrow">{fm.eyebrow}</p>
+          <h2 className="home-headline">
+            <span>{fm.hero_line1}</span>
+            <span className="home-headline__accent">{fm.hero_line2}</span>
+          </h2>
+          {signal ? (
+            <p className="home-hero__signal-greeting">{signal.greeting}</p>
+          ) : null}
+          <p className="home-mission">{fm.mission}</p>
 
-        {fm.stats && fm.stats.length > 0 && (
-          <div className="stats-bar">
-            {fm.stats.map((s) => (
-              <div className="stat-item" key={s.label}>
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
-          </div>
-        )}
+          {fm.stats && fm.stats.length > 0 && (
+            <div className="stats-bar">
+              {fm.stats.map((s) => (
+                <div className="stat-item" key={s.label}>
+                  <strong>{s.value}</strong>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
 
-        {fm.cta && fm.cta.length > 0 && (
-          <div className="hero-cta">
-            {fm.cta.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`cta-btn${item.primary ? " cta-btn--primary" : ""}`}
-              >
-                {item.label} →
-              </Link>
-            ))}
-          </div>
-        )}
-      </section>
+          {fm.cta && fm.cta.length > 0 && (
+            <div className="hero-cta">
+              {fm.cta.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`cta-btn${item.primary ? " cta-btn--primary" : ""}`}
+                >
+                  {item.label} →
+                </Link>
+              ))}
+            </div>
+          )}
+        </section>
+      </RevealSection>
 
       {/* ── 기획 방식 ── */}
       {fm.process && fm.process.length > 0 && (
-        <section className="home-section">
-          <div className="home-section__header">
-            <p className="home-section__eyebrow">HOW I WORK</p>
-            <h3>기획 방식</h3>
-          </div>
-          <div className="process-grid">
-            {fm.process.map((item, i) => (
-              <article className="process-card" key={item.title} data-index={i}>
-                <div className="process-card__icon">
-                  {ICONS[item.icon] ?? null}
-                </div>
-                <h4>{item.title}</h4>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        <RevealSection>
+          <section className="home-section">
+            <div className="home-section__header">
+              <p className="home-section__eyebrow">HOW I WORK</p>
+              <h3>기획 방식</h3>
+            </div>
+            <div className="process-grid">
+              {fm.process.map((item, i) => (
+                <article className="process-card" key={item.title} data-index={i}>
+                  <div className="process-card__icon">
+                    {ICONS[item.icon] ?? null}
+                  </div>
+                  <h4>{item.title}</h4>
+                  <p>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </RevealSection>
       )}
 
       {/* ── 대표 프로젝트 ── */}
       {featuredProjects.length > 0 && (
-        <section className="home-section">
-          <div className="home-section__header home-section__header--row">
-            <div>
-              <p className="home-section__eyebrow">FEATURED LOGS</p>
-              <h3>대표 프로젝트</h3>
-            </div>
-            <Link className="section-more-link" to="/projects">
-              전체 보기 →
-            </Link>
-          </div>
-          <div className="featured-list">
-            {featuredProjects.map((project) => (
-              <Link
-                key={project.slug}
-                className="featured-card"
-                to={`/projects/${project.slug}`}
-              >
-                <div className="featured-card__media" aria-hidden="true">
-                  <span>{project.frontmatter.title}</span>
-                </div>
-                <div className="featured-card__content">
-                  <p className="featured-card__role">{project.frontmatter.role}</p>
-                  <h4>{project.frontmatter.title}</h4>
-                  <p>{project.frontmatter.summary}</p>
-                  <strong>{project.frontmatter.core_experience}</strong>
-                </div>
+        <RevealSection>
+          <section className="home-section">
+            <div className="home-section__header home-section__header--row">
+              <div>
+                <p className="home-section__eyebrow">FEATURED LOGS</p>
+                <h3>대표 프로젝트</h3>
+              </div>
+              <Link className="section-more-link" to="/projects">
+                전체 보기 →
               </Link>
-            ))}
-          </div>
-        </section>
+            </div>
+            <div className="featured-list">
+              {featuredProjects.map((project) => (
+                <Link
+                  key={project.slug}
+                  className="featured-card"
+                  to={`/projects/${project.slug}`}
+                >
+                  <div className="featured-card__media" aria-hidden="true">
+                    <span>{project.frontmatter.title}</span>
+                  </div>
+                  <div className="featured-card__content">
+                    <p className="featured-card__role">{project.frontmatter.role}</p>
+                    <h4>{project.frontmatter.title}</h4>
+                    <p>{project.frontmatter.summary}</p>
+                    <strong>{project.frontmatter.core_experience}</strong>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </RevealSection>
       )}
 
       {/* ── Contact CTA ── */}
       {fm.contact && (
-        <section className="contact-strip">
-          <div>
-            <h3>{fm.contact.headline}</h3>
-            <p>{fm.contact.body}</p>
-          </div>
-          <Link className="cta-btn cta-btn--outline" to={fm.contact.href}>
-            {fm.contact.label}
-          </Link>
-        </section>
+        <RevealSection>
+          <section className="contact-strip">
+            <div>
+              <h3>{fm.contact.headline}</h3>
+              <p>{fm.contact.body}</p>
+            </div>
+            <Link className="cta-btn cta-btn--outline" to={fm.contact.href}>
+              {fm.contact.label}
+            </Link>
+          </section>
+        </RevealSection>
       )}
 
     </section>
