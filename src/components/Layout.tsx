@@ -101,10 +101,21 @@ export function Layout({ children }: LayoutProps) {
       <div className="app-shell__backdrop" aria-hidden="true" />
       <header className="site-header">
         <div className="site-header__brand">
-          <p className="site-header__eyebrow">VOYAGER 02</p>
+          <p className="site-header__eyebrow">
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M19.59 3l-8.6 8.6a5.867 5.867 0 0 1 1.117 2.285l2.513-2.513 1.768 1.768-2.535 2.535a5.88 5.88 0 0 1-1.294 6.618L11.013 21.25a5.875 5.875 0 0 1-8.31-8.31l1.015-1.015a5.88 5.88 0 0 1 6.618-1.294l2.535-2.535 1.768 1.768-2.513 2.513a5.867 5.867 0 0 1 2.285 1.117l8.6-8.6L19.59 3zm-9.94 8.94a3.875 3.875 0 1 0-5.48 5.48 3.875 3.875 0 0 0 5.48-5.48z" />
+            </svg>
+          </p>
           <div>
             <h1>게임 콘텐츠 기획자 포트폴리오</h1>
-            <p>스토리텔링과 콘텐츠 결합으로 몰입감을 설계하는 항해 기록</p>
+            <p>스토리텔링과 콘텐츠 결합으로 몰입감을 설계하는 항해 일지</p>
           </div>
           <button
             aria-expanded={navOpen}
@@ -125,8 +136,9 @@ export function Layout({ children }: LayoutProps) {
             <span className="intro-replay-btn__icon" aria-hidden="true" />
             <span className="intro-replay-btn__label">인트로 다시보기</span>
           </button>
-          <Link className="devlog-shortcut-btn" to="/records">
-            개발 로그
+          <Link className="devlog-shortcut-btn" to="/records" aria-label="개발 로그">
+            <span className="devlog-shortcut-btn__icon" aria-hidden="true" />
+            <span className="devlog-shortcut-btn__label">개발 로그</span>
           </Link>
         </div>
       </header>
