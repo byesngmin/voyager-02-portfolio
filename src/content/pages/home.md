@@ -3,18 +3,16 @@ slug: home
 order: 1
 title: 보이저 02
 eyebrow: Narrative Content Planner
-hero_line1: "스토리와 시스템을,"
+hero_line1: "스토리와 시스템을"
 hero_line2: "하나의 경험으로 완성하는 기획자"
-mission: 단순한 구르기에도 유저가 몰입할 수 있도록, 콘텐츠 구조 자체가 플레이 경험이 되게 설계합니다.
+mission: 단순한 굴리기에도 유저가 몰입할 수 있도록, 콘텐츠 구조 자체가 플레이 경험이 되게 설계합니다.
 stats:
   - value: "3개"
-    label: 기획 프로젝트
-  - value: "4개+"
-    label: 게임 분석 로그
-  - value: 첫 1분
-    label: 핵심 몰입 설계 구간
-  - value: 100%
-    label: 기록 기반 판단
+    label: 게임 기획 팀프로젝트
+  - value: "3개+"
+    label: 다양한 매니지먼트 경험
+  - value: AI 실무 활용
+    label: 매니지먼트 및 실무용 앱 개발
 cta:
   - label: 이력서
     href: /resume

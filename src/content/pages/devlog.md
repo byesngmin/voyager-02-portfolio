@@ -3,7 +3,7 @@ slug: devlog
 order: 6
 title: 개발 로그
 eyebrow: Devlog / Build As Portfolio
-summary: 이 SPA를 만드는 과정 자체를 포트폴리오로 남기기 위한 기록 공간입니다.
+summary: 이 페이지를 만드는 과정 자체를 포트폴리오로 남기기 위한 기록 공간입니다.
 ---
 이 페이지는 **왜 이렇게 만들었는가**에 대한 기록을 남기기 위한 제작 일지입니다.
 
