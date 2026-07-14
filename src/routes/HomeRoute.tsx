@@ -122,6 +122,23 @@ export function HomeRoute() {
       {/* ── Hero ── */}
       <RevealSection>
         <section className="home-hero-v2">
+          <div className="mission-art" aria-hidden="true">
+            <div className="mission-art__telemetry"><span>DSN 43 / X-BAND</span><span>RANGE 20.1B KM</span></div>
+            <span className="mission-art__orbit mission-art__orbit--one" />
+            <span className="mission-art__orbit mission-art__orbit--two" />
+            <svg className="mission-art__probe" viewBox="0 0 320 220" fill="none">
+              <g className="mission-art__probe-body">
+                <ellipse cx="170" cy="92" rx="54" ry="20" stroke="currentColor" strokeWidth="4" />
+                <path d="M119 88c18-42 82-42 103 0M170 92v48m-18 0h36M170 140l-26 24m26-24 28 24" stroke="currentColor" strokeWidth="4" />
+                <rect x="149" y="108" width="42" height="24" stroke="currentColor" strokeWidth="3" />
+                <path d="M149 117H91m100 0h54M91 105v24m154-24v24M92 108l-38-20m38 38-38 20m191-38 36-20m-36 38 36 20" stroke="currentColor" strokeWidth="3" />
+                <circle cx="170" cy="87" r="7" fill="currentColor" />
+              </g>
+              <path className="mission-art__signal" d="M225 61c28 9 48 29 56 55M234 43c38 12 65 39 77 77" stroke="currentColor" strokeWidth="3" />
+            </svg>
+            <div className="mission-art__spectrum">{[4,8,5,12,7,16,9,13,6,11,5,9,4,7,3].map((n, i) => <i key={i} style={{ height: `${n * 2}px` }} />)}</div>
+            <div className="mission-art__planet" />
+          </div>
           <p className="home-hero__eyebrow">{fm.eyebrow}</p>
           <h2 className="home-headline">
             <span>{fm.hero_line1}</span>

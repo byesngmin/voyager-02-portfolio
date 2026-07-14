@@ -97,6 +97,7 @@ export function IntroGate({ children }: IntroGateProps) {
           aria-busy={progress < 100}
         >
           <div className="intro-gate__stars" aria-hidden="true" />
+          <div className="intro-gate__grid" aria-hidden="true" />
           
           <div className="intro-gate__content">
             <div className="intro-gate__copy">
@@ -108,6 +109,10 @@ export function IntroGate({ children }: IntroGateProps) {
             </div>
             
             <div className="intro-gate__voyager-area">
+              <div className="intro-gate__radar" aria-hidden="true"><i /><i /><i /><span /></div>
+              <div className="intro-gate__telemetry" aria-hidden="true">
+                <span>ACQUISITION MODE</span><b>DSN / CHANNEL 02</b><span>AZ 247.6° · EL 36.2°</span>
+              </div>
               <div 
                 className="intro-gate__voyager-wrapper"
                 style={{ 
@@ -118,6 +123,9 @@ export function IntroGate({ children }: IntroGateProps) {
               >
                 <div className="intro-gate__ship" aria-hidden="true">
                   <span className="intro-gate__core" />
+                  <span className="intro-gate__dish" />
+                  <span className="intro-gate__boom intro-gate__boom--left" />
+                  <span className="intro-gate__boom intro-gate__boom--right" />
                 </div>
                 
                 {progress === 100 && (

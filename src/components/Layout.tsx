@@ -99,6 +99,11 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="app-shell">
       <div className="app-shell__backdrop" aria-hidden="true" />
+      <div className="cosmic-field" aria-hidden="true">
+        <span className="cosmic-field__stars cosmic-field__stars--near" />
+        <span className="cosmic-field__stars cosmic-field__stars--far" />
+        <span className="cosmic-field__orbit" />
+      </div>
       <header className="site-header">
         <div className="site-header__brand">
           <p className="site-header__eyebrow">
@@ -116,6 +121,11 @@ export function Layout({ children }: LayoutProps) {
           <div>
             <h1>VOYAGER-02</h1>
             <p>PATIMA 시스템·콘텐츠 기획 지원 · 황승민</p>
+          </div>
+          <div className="site-header__telemetry" aria-hidden="true">
+            <span><i /> SIGNAL LOCKED</span>
+            <span>PATIMA APPLICATION</span>
+            <span>EARTH / SECTOR 02</span>
           </div>
           <button
             aria-expanded={navOpen}
@@ -148,8 +158,12 @@ export function Layout({ children }: LayoutProps) {
         <aside className="site-sidebar">
           <div className="site-sidebar__panel">
             <p className="site-header__eyebrow">SIGNAL INDEX</p>
+            <div className="sidebar-radar" aria-hidden="true">
+              <span className="sidebar-radar__sweep" />
+              <i />
+            </div>
             <nav className="site-nav" aria-label="주요 메뉴">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <NavLink
                   className={({ isActive }) =>
                     [
@@ -163,7 +177,8 @@ export function Layout({ children }: LayoutProps) {
                   key={item.to}
                   to={item.to}
                 >
-                  {item.label}
+                  <span className="site-nav__number">{String(index + 1).padStart(2, "0")}</span>
+                  <span>{item.label}</span>
                 </NavLink>
               ))}
             </nav>
