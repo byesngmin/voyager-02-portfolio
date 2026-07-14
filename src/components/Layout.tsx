@@ -11,10 +11,10 @@ type NavItem = {
   subtle?: boolean;
 };
 
-const INTRO_KEY = 'voyager02-intro-seen';
+const INTRO_KEY = 'futuremix-intro-seen';
 
 const navItems: NavItem[] = [
-  { to: "/", label: "개요" },
+  { to: "/", label: "지원 개요" },
   { to: "/resume", label: "이력서" },
   { to: "/self-intro", label: "자기소개서" },
   { to: "/projects", label: "프로젝트" },
@@ -110,12 +110,12 @@ export function Layout({ children }: LayoutProps) {
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M19.59 3l-8.6 8.6a5.867 5.867 0 0 1 1.117 2.285l2.513-2.513 1.768 1.768-2.535 2.535a5.88 5.88 0 0 1-1.294 6.618L11.013 21.25a5.875 5.875 0 0 1-8.31-8.31l1.015-1.015a5.88 5.88 0 0 1 6.618-1.294l2.535-2.535 1.768 1.768-2.513 2.513a5.867 5.867 0 0 1 2.285 1.117l8.6-8.6L19.59 3zm-9.94 8.94a3.875 3.875 0 1 0-5.48 5.48 3.875 3.875 0 0 0 5.48-5.48z" />
+              <path d="M3 11h3l2-6 3.5 13L15 8l2 6h4v2h-5.5L15 14l-3.5 10L8 11l-.5 2H3z" />
             </svg>
           </p>
           <div>
-            <h1>게임 콘텐츠 기획자 포트폴리오</h1>
-            <p>스토리텔링과 콘텐츠 결합으로 몰입감을 설계하는 항해 일지</p>
+            <h1>PATIMA CONTENT MIX</h1>
+            <p>관계의 재미를 시스템과 콘텐츠의 흐름으로 설계하는 기획자 황승민</p>
           </div>
           <button
             aria-expanded={navOpen}
@@ -147,7 +147,7 @@ export function Layout({ children }: LayoutProps) {
         <main className="site-main">{children}</main>
         <aside className="site-sidebar">
           <div className="site-sidebar__panel">
-            <p className="site-header__eyebrow">Orbital Map</p>
+            <p className="site-header__eyebrow">SIGNAL INDEX</p>
             <nav className="site-nav" aria-label="주요 메뉴">
               {navItems.map((item) => (
                 <NavLink
@@ -206,8 +206,8 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       <footer className="site-footer">
-        <p>Voyager-02 Portfolio v1</p>
-        <p>3일 x 4시간, 총 12시간을 기준으로 설계된 GitHub Pages SPA</p>
+        <p>HWANG SEUNGMIN · GAME CONTENT PLANNER</p>
+        <p>SYSTEM × CONTENT × PLAYER EXPERIENCE</p>
       </footer>
       <button
         className={"back-to-top-btn" + (showTop ? " is-visible" : "")}

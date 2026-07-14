@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { usePrefersReducedMotion } from "../lib/usePrefersReducedMotion";
 
-const INTRO_STORAGE_KEY = "voyager02-intro-seen";
-const LOADING_DURATION_MS = 2500;
+const INTRO_STORAGE_KEY = "futuremix-intro-seen";
+const LOADING_DURATION_MS = 1400;
 
 type IntroGateProps = {
   children: ReactNode;
@@ -100,11 +100,10 @@ export function IntroGate({ children }: IntroGateProps) {
           
           <div className="intro-gate__content">
             <div className="intro-gate__copy">
-              <p className="intro-gate__eyebrow">VOYAGER-02 / SIGNAL WAKE</p>
-              <h1>서사와 콘텐츠가 맞물리는 항해를 시작합니다.</h1>
+              <p className="intro-gate__eyebrow">PATIMA APPLICATION / SIGNAL CHECK</p>
+              <h1>관계의 재미를<br />플레이의 구조로.</h1>
               <p>
-                플레이어가 세계를 믿게 되는 순간을 설계하는 게임 콘텐츠 기획자
-                포트폴리오입니다.
+                시스템과 콘텐츠를 연결해 수집의 시작부터 성취까지 설계합니다.
               </p>
             </div>
             
@@ -128,7 +127,7 @@ export function IntroGate({ children }: IntroGateProps) {
                     onClick={handleEnter} 
                     tabIndex={0} 
                     type="button"
-                    aria-label="항해 시작하기"
+                    aria-label="포트폴리오 열기"
                   >
                     <span className="intro-gate__signal-ring"></span>
                     <span className="intro-gate__signal-ring delay-1"></span>

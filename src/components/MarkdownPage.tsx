@@ -2,7 +2,7 @@ import mermaid from "mermaid";
 import { ReactNode, useEffect, useRef } from "react";
 import { ContentDocument, PageFrontmatter } from "../lib/content";
 
-mermaid.initialize({ startOnLoad: false, theme: "dark" });
+mermaid.initialize({ startOnLoad: false, theme: "base", themeVariables: { background: "#ffffff", primaryColor: "#dff7ff", primaryTextColor: "#10244a", primaryBorderColor: "#39bde8", lineColor: "#4d6a92", secondaryColor: "#f0e8ff", tertiaryColor: "#f5ffb8" } });
 
 type MarkdownPageProps = {
   document: ContentDocument<PageFrontmatter>;

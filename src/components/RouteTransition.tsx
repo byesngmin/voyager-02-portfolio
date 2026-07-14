@@ -19,11 +19,14 @@ export function RouteTransition({ children }: RouteTransitionProps) {
       {reducedMotion ? null : (
         <div
           className="route-transition__pulse"
-          key={location.pathname}
+          key={`pulse-${location.pathname}`}
           aria-hidden="true"
         />
       )}
-      <div className="route-transition__panel" key={location.pathname}>
+      <div
+        className="route-transition__panel"
+        key={`panel-${location.pathname}`}
+      >
         {children}
       </div>
     </div>
