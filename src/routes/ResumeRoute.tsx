@@ -61,8 +61,14 @@ export function ResumeRoute() {
 
       {/* ── Profile ── */}
       <section className="resume-profile">
-        <div className="resume-profile__photo" aria-hidden="true">
-          <span>{p?.name?.[0] ?? "?"}</span>
+        <div className="resume-profile__photo">
+          <img
+            src={`${import.meta.env.BASE_URL}images/profile-hwang-seungmin.jpg`}
+            alt="황승민 증명사진"
+            width="354"
+            height="472"
+            decoding="async"
+          />
         </div>
         <div className="resume-profile__body">
           <div className="resume-profile__top">
