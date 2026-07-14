@@ -100,10 +100,10 @@ export function IntroGate({ children }: IntroGateProps) {
           
           <div className="intro-gate__content">
             <div className="intro-gate__copy">
-              <p className="intro-gate__eyebrow">PATIMA APPLICATION / SIGNAL CHECK</p>
-              <h1>관계의 재미를<br />플레이의 구조로.</h1>
+              <p className="intro-gate__eyebrow">VOYAGER-02 / SIGNAL CHECK</p>
+              <h1>방향을 잃지 않고<br />끝내 도달하겠습니다.</h1>
               <p>
-                시스템과 콘텐츠를 연결해 수집의 시작부터 성취까지 설계합니다.
+                밝은 신호를 따라 PATIMA의 시스템과 콘텐츠를 연결합니다.
               </p>
             </div>
             

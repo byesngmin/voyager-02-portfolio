@@ -1,9 +1,9 @@
 ---
 slug: self-intro
 order: 3
-title: 자기소개서 초안
-eyebrow: Self Introduction / Why I Design Immersion
-summary: 저는 플레이어가 어떤 정보를 받는지보다, 그 정보가 언제 어떤 감정과 함께 도착하는지를 더 중요하게 생각합니다.
+title: PATIMA 지원 자기소개서
+eyebrow: 보이저 2호 / PATIMA 시스템·콘텐츠 기획 지원
+summary: 트릭컬의 캐릭터성과 규칙을 함께 읽고, 관계의 재미를 플레이의 구조로 연결합니다.
 ---
 <!-- ═══════════════════════════════════════════════════════════
      HR 페르소나 & 평가 개요 (다른 세션 참조용 — 삭제 금지)

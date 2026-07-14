@@ -83,7 +83,7 @@ projects_exp:
       - "콘텐츠 기획 및 데이터테이블 구조 학습"
       - "이후 기업협약 게임 개발 프로젝트에서 해당 구조 활용"
   - title: 기업협약 수집/방치형 게임 개발
-    period: "2025.12.23. ~ 2025.01.22."
+    period: "2025.12.23. ~ 2026.01.22."
     role: "시나리오/UI 기획"
     team: "기획 5명 / 프로그래밍 6명"
     points:
@@ -96,10 +96,9 @@ tools:
         color: "#4285f4"
         level: 3
         description: |
-          구글 워크스페이스 전반을 활용한 인원 관리 실무 경험 및 문서 작성에 활용
-          SpreadSheet | VLOOKUP 등의 함수와 필터 등의 앱 기능을 활용한 관리 문서 및 테이블 구조 작성/관리 경험
-          Slide | 마스터 슬라이드 등 앱 기능을 활용한 통일된 발표 자료 및 기획서 슬라이드를 효율적으로 작성 경험 
-          Document | 스타일과 표 등 가독성과 기능성을 겸비한 정부 공고 대응 제안서 작성 경험
+          관리 문서 | Spreadsheet 함수·필터를 활용한 인원 관리 문서와 테이블 구조 작성
+          발표 자료 | 마스터 슬라이드 기반의 통일된 발표 자료와 기획서 제작
+          제안서 | 스타일과 표를 적용한 정부 공고 대응 제안서 작성
       - name: MS Office
         color: "#d73b02"
         level: 3
@@ -153,27 +152,26 @@ tools:
         color: "#4a5568"
         level: 3
         description: |
-          작업영역 | Projects·COWORK 등 각 서비스 앱 기능 활용 작업영역 구성·관리
-          프롬프트 엔지니어링 | COT·TOT 등 이론 기반 구조화 프롬프트 작성
-          에이전트 설계 | 토큰 효율·능률 향상을 위한 에이전트 구조 및 하네스 직접 설계·적용
-          API·CLI 활용 | 각 서비스 API 확보 및 CLI·SDK 환경 직접 활용
-          오픈소스 학습 및 활용 | Hugging Face·GitHub 모델 탐색, Ollama·LM Studio 로컬 실행, Stable Diffusion·ComfyUI 이미지 생성 워크플로우 구축
+          출시 이미지 | Stable Diffusion·ComfyUI 워크플로우로 스토리플레이 출시작의 캐릭터·일러스트·배경 제작
+          업무 자동화 | GitHub Actions 기반 훈련일지 작성·알림 자동화로 교강사 하루 10~20분 절감
+          교안 도구 | 교안 서식 정리와 초안 도출을 돕는 봇을 Gems에서 IDE 워크플로우, 웹 앱으로 발전
+          개발 결과물 | 다중 AI 에이전트 작업 파이프라인을 구성하고 이 포트폴리오 사이트 개발에 활용
       - name: Gemini
         color: "#4285f4"
         level: 3
-        description: "Gems | 작업별 특화 봇 다수 설계·배포 및 운영"
+        description: "교안 봇 | 작업별 Gems를 설계·운영하고 교안 초안 제작 흐름에 적용"
       - name: ChatGPT / Codex
         color: "#10a37f"
         level: 3
-        description: "Codex CLI | 바이브코딩 및 소스 코드 자동화에 특화 활용"
+        description: "포트폴리오 개발 | Codex CLI를 활용한 소스 작성·검증 자동화"
       - name: Claude / ClaudeCode
         color: "#cc785c"
         level: 3
-        description: "ClaudeCode | 이 포트폴리오 사이트를 ClaudeCode CLI로 직접 개발·운영"
+        description: "포트폴리오 개발 | ClaudeCode CLI로 이 사이트를 개발·운영"
       - name: NotebookLM
         color: "#1a73e8"
         level: 2
         description: |
-          RAG 환경 | 리서치 자료 기반 RAG 환경 구축 및 소스 관리
-          콘텐츠 생성 | 신뢰성 있는 보고서·발표 자료·학습 자료(퀴즈 등) 생성 및 관리
+          자료 구조화 | 리서치 자료 기반 환경을 구축하고 출처 소스를 관리
+          보고·학습 자료 | 확보한 자료를 근거로 보고서·발표 자료·퀴즈 제작
 ---

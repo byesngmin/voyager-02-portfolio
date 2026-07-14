@@ -114,8 +114,8 @@ export function Layout({ children }: LayoutProps) {
             </svg>
           </p>
           <div>
-            <h1>PATIMA CONTENT MIX</h1>
-            <p>관계의 재미를 시스템과 콘텐츠의 흐름으로 설계하는 기획자 황승민</p>
+            <h1>VOYAGER-02</h1>
+            <p>PATIMA 시스템·콘텐츠 기획 지원 · 황승민</p>
           </div>
           <button
             aria-expanded={navOpen}

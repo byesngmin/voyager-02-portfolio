@@ -1,11 +1,11 @@
 ---
 slug: home
 order: 1
-title: PATIMA 지원 포트폴리오
-eyebrow: EPID GAMES · TRICKCAL PATIMA APPLICATION
-hero_line1: "관계의 재미를"
-hero_line2: "플레이의 구조로 만드는 기획자"
-mission: 캐릭터를 만나는 순간부터 관계를 쌓고 수집의 성취를 확인하는 순간까지, 시스템과 콘텐츠를 하나의 플레이어 경험으로 설계합니다.
+title: 보이저 2호
+eyebrow: VOYAGER-02 · PATIMA APPLICATION
+hero_line1: "보이저 2호"
+hero_line2: "방향을 잃지 않는 기획"
+mission: 몇 번의 좌절 뒤에도 끝내 도달한 보이저 2호처럼, 관계의 재미를 시스템과 콘텐츠가 맞물리는 플레이로 완성하겠습니다.
 stats:
   - value: "3개"
     label: 게임 기획 주요 프로젝트

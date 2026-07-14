@@ -33,14 +33,21 @@ const CONTACT_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-function Stars({ level, max = 3 }: { level: number; max?: number }) {
-  return (
-    <span className="skill-stars" aria-label={`${level}/${max}점`}>
-      {"★".repeat(level)}
-      {"☆".repeat(max - level)}
-    </span>
-  );
+function parseOutcomes(description: string) {
+  return description.split(/\r?\n/).map((line) => line.trim()).filter(Boolean).map((line) => {
+    const [label, ...rest] = line.split("|");
+    return rest.length > 0
+      ? { label: label.trim(), outcome: rest.join("|").trim() }
+      : { label: "산출물", outcome: line };
+  });
 }
+
+const AI_WORKFLOW = [
+  ["01", "문제 정의", "목표·제약·검증 기준"],
+  ["02", "탐색·구조화", "자료·모델·소스 정리"],
+  ["03", "결과물 제작", "이미지·문서·앱·코드"],
+  ["04", "검증·자동화", "QA·배포·반복 업무 절감"],
+];
 
 export function ResumeRoute() {
   const document = getPage("resume");
@@ -210,12 +217,18 @@ export function ResumeRoute() {
           <h3 className="resume-section__title">
             <span className="resume-section__icon" aria-hidden="true">⚙</span>
             기술 역량 및 도구
-            <span className="skill-stars-legend">★ 하 &nbsp;★★ 중 &nbsp;★★★ 상 순</span>
           </h3>
           <div className="tool-grid">
             {fm.tools.map((cat) => (
-              <div key={cat.category} className="tool-category">
+              <div key={cat.category} className={`tool-category${cat.category === "AI" ? " tool-category--ai" : ""}`}>
                 <p className="tool-category__label">{cat.category}</p>
+                {cat.category === "AI" && (
+                  <div className="ai-workflow" aria-label="AI 업무 흐름">
+                    {AI_WORKFLOW.map(([no, title, output]) => (
+                      <div key={no}><span>{no}</span><strong>{title}</strong><small>{output}</small></div>
+                    ))}
+                  </div>
+                )}
                 {cat.items.map((tool) => (
                   <div key={tool.name} className="tool-item">
                     <div
@@ -227,9 +240,12 @@ export function ResumeRoute() {
                     <div className="tool-item__body">
                       <div className="tool-item__name-row">
                         <strong>{tool.name}</strong>
-                        {tool.level != null && <Stars level={tool.level} />}
                       </div>
-                      <p>{tool.description}</p>
+                      <ul className="tool-outcome-list">
+                        {parseOutcomes(tool.description).map((item, i) => (
+                          <li key={`${item.label}-${i}`}><span>{item.label}</span><p>{item.outcome}</p></li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 ))}
