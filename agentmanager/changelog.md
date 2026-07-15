@@ -19,6 +19,7 @@
 | 2026-04-29 | codex (B-09) | Toast + ContactBlock 컴포넌트 생성 | src/components/Toast.tsx (신규), src/components/ContactBlock.tsx (신규) |
 | 2026-04-29 | codex (B-10/11) | 인쇄 스타일 + reduced-motion 유틸리티 | src/styles/global.css |
 | 2026-04-29 | claude-code | B-12 QA: TS noEmit + Vite build 통과 확인 | — |
+| 2026-07-15 | codex | 개발 로그 제거, 인트로 아이콘 전용화, 자기소개 해시태그화 및 QA | src/app, src/components, src/routes, src/lib, src/styles, src/content |
 
 ---
 

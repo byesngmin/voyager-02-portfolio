@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type LayoutProps = {
   children: ReactNode;
@@ -144,12 +144,7 @@ export function Layout({ children }: LayoutProps) {
             aria-label="인트로 다시보기"
           >
             <span className="intro-replay-btn__icon" aria-hidden="true" />
-            <span className="intro-replay-btn__label">인트로 다시보기</span>
           </button>
-          <Link className="devlog-shortcut-btn" to="/records" aria-label="개발 로그">
-            <span className="devlog-shortcut-btn__icon" aria-hidden="true" />
-            <span className="devlog-shortcut-btn__label">개발 로그</span>
-          </Link>
         </div>
       </header>
 

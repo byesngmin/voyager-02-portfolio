@@ -38,7 +38,7 @@ export function SelfIntroPage({ document }: SelfIntroPageProps) {
           <p className="signal-label">PATIMA 시스템·콘텐츠 기획 지원</p>
           <h2>PATIMA의 관계를<br /><em>플레이의 구조</em>로 잇겠습니다.</h2>
           <p className="si-hero__lead">트릭컬의 캐릭터성과 데이터 구조를 함께 읽고, 시스템과 콘텐츠를 하나의 경험으로 문서화해 온 기획자 황승민입니다.</p>
-          <div className="si-chip-row" aria-label="핵심 역량"><span>시스템 × 콘텐츠</span><span>트릭컬 이해</span><span>문서화 × 협업</span></div>
+          <div className="si-chip-row" aria-label="핵심 역량"><span>#시스템×콘텐츠</span><span>#트릭컬이해</span><span>#문서화×협업</span></div>
         </div>
         <div className="si-visual" aria-hidden="true"><span>VOYAGER-02 SIGNAL</span><b>관계</b><i>→</i><b>수집</b><i>→</i><b>성취</b><div className="si-eq">{[3,7,5,9,4,8,6,10,5,7,3,8].map((n,i)=><span key={i} style={{height:`${n*8}%`}} />)}</div></div>
       </header>

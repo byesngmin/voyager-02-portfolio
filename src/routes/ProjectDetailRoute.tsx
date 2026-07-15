@@ -147,9 +147,6 @@ export function ProjectDetailRoute() {
         <Link className="site-nav__link" to="/projects">
           모든 프로젝트 보기
         </Link>
-        <Link className="site-nav__link site-nav__link--subtle" to="/records">
-          기획/로그 보기
-        </Link>
       </div>
     </section>
   );

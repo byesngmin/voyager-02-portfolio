@@ -118,15 +118,6 @@ export type GameHistoryFrontmatter = BaseFrontmatter & {
   tags: string[];
 };
 
-export type DevlogFrontmatter = BaseFrontmatter & {
-  date: string;
-  topic: string;
-  decision: string;
-  problem: string;
-  resolution: string;
-  next_step: string;
-};
-
 export type ContentDocument<T extends BaseFrontmatter> = {
   slug: string;
   frontmatter: T;
@@ -192,18 +183,9 @@ const gameModules = import.meta.glob("../content/game-history/*.md", {
   query: "?raw",
 }) as Record<string, string>;
 
-const devlogModules = import.meta.glob("../content/devlog/*.md", {
-  eager: true,
-  import: "default",
-  query: "?raw",
-}) as Record<string, string>;
-
 const pages = loadCollection<PageFrontmatter>(pageModules);
 const projects = loadCollection<ProjectFrontmatter>(projectModules);
 const gameEntries = loadCollection<GameHistoryFrontmatter>(gameModules);
-const devlogs = loadCollection<DevlogFrontmatter>(devlogModules).sort((a, b) =>
-  a.frontmatter.date < b.frontmatter.date ? 1 : -1,
-);
 
 export function getPage(slug: string) {
   return pages.find((page) => page.slug === slug);
@@ -224,8 +206,4 @@ export function getProject(slug: string) {
 
 export function getGameEntries() {
   return gameEntries;
-}
-
-export function getDevlogs() {
-  return devlogs;
 }

@@ -7,7 +7,6 @@ import { HomeRoute } from "../routes/HomeRoute";
 import { NotFoundRoute } from "../routes/NotFoundRoute";
 import { ProjectDetailRoute } from "../routes/ProjectDetailRoute";
 import { ProjectsRoute } from "../routes/ProjectsRoute";
-import { RecordsRoute } from "../routes/RecordsRoute";
 import { ResumeRoute } from "../routes/ResumeRoute";
 import { SelfIntroRoute } from "../routes/SelfIntroRoute";
 
@@ -24,9 +23,9 @@ export default function App() {
               <Route path="/projects" element={<ProjectsRoute />} />
               <Route path="/projects/:slug" element={<ProjectDetailRoute />} />
               <Route path="/game-history" element={<GameHistoryRoute />} />
-              <Route path="/records" element={<RecordsRoute />} />
-              <Route path="/site-plan" element={<Navigate to="/records" replace />} />
-              <Route path="/devlog" element={<Navigate to="/records" replace />} />
+              <Route path="/records" element={<Navigate to="/" replace />} />
+              <Route path="/site-plan" element={<Navigate to="/" replace />} />
+              <Route path="/devlog" element={<Navigate to="/" replace />} />
               <Route path="*" element={<NotFoundRoute />} />
             </Routes>
           </RouteTransition>
