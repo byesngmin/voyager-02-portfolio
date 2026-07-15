@@ -26,7 +26,7 @@ summary: 사이트 구축 과정을 포트폴리오 자산으로 남기기 위�
 - 라우트: `/`, `/resume`, `/self-intro`, `/projects`, `/projects/:slug`, `/game-history`, `/site-plan`, `/devlog`
 - 콘텐츠 관리: Markdown 기반 모듈형 구조
 - 배포: GitHub Pages + SPA 404 fallback
-- 문서화: `docs/`와 사이트 내 `개발 로그` 병행
+- 문서화: `docs/` 기반 내부 문서 관리
 
 ## 일정
 
