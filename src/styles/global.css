@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&display=swap");
 
 :root {
   color-scheme: dark;
-  font-family: "Noto Sans KR", sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  line-height: 1.5;
   font-weight: 400;
   color: #f4f6f8;
   background:
@@ -36,25 +37,25 @@
     0 0 0 1px rgba(127, 244, 255, 0.35),
     0 0 24px -4px rgba(127, 244, 255, 0.45);
   --fs-h1: clamp(2.1rem, 6.5vw, 5.4rem);
-  --fs-h2: clamp(1.5rem, 3.8vw, 3.25rem);
-  --fs-h3: clamp(1.1rem, 2.2vw, 1.85rem);
-  --fs-body: clamp(0.95rem, 1.1vw, 1.125rem);
+  --fs-h2: clamp(2rem, 3.2vw, 2.375rem);
+  --fs-h3: clamp(1.25rem, 1.8vw, 1.4375rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.1875rem);
   --fs-small: clamp(0.82rem, 0.9vw, 0.95rem);
   --fs-eye: clamp(0.66rem, 0.7vw, 0.82rem);
-  --font-display: "Orbitron", system-ui, sans-serif;
-  --font-body: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  --font-display: "Orbitron", var(--font-body);
+  --font-body: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --lh-heading: 1.05;
   --lh-subhead: 1.18;
-  --lh-body: 1.78;
+  --lh-body: 1.5;
   --lh-small: 1.55;
   --lh-tight: 1.1;
   --lh-snug: 1.25;
-  --lh-base: 1.6;
-  --lh-loose: 1.8;
-  --ls-tight: -0.03em;
-  --ls-snug: -0.01em;
-  --ls-eye: 0.2em;
+  --lh-base: 1.5;
+  --lh-loose: 1.65;
+  --ls-tight: -0.02em;
+  --ls-snug: -0.005em;
+  --ls-eye: 0.12em;
   --sp-1: 0.25rem;
   --sp-2: 0.5rem;
   --sp-3: 0.75rem;
@@ -2541,7 +2542,7 @@ dialog.nav-dialog[open] {
 }
 
 /* === PATIMA / Future Bass light mix === */
-:root { color-scheme: light; --bg-deep:#dff7ff; --bg-base:#edfaff; --bg-raise:#fff; --surface:rgba(255,255,255,.76); --surface-strong:rgba(247,253,255,.96); --surface-soft:rgba(16,53,100,.05); --border:rgba(24,102,154,.18); --border-strong:rgba(0,151,214,.48); --text-faint:#71819a; --text-muted:#4d607d; --accent:#008fd5; --accent-warm:#ffe45e; --accent-hot:#ed4ba0; --focus:#7a43e8; --link:#007ebf; --success:#48a861; --shadow:0 20px 55px rgba(37,112,153,.13); --shadow-lift:0 26px 60px rgba(34,104,149,.18); color:#10244a; background:#dff7ff; --font-display:"Orbitron","Noto Sans KR",sans-serif; }
+:root { color-scheme: light; --bg-deep:#dff7ff; --bg-base:#edfaff; --bg-raise:#fff; --surface:rgba(255,255,255,.76); --surface-strong:rgba(247,253,255,.96); --surface-soft:rgba(16,53,100,.05); --border:rgba(24,102,154,.18); --border-strong:rgba(0,151,214,.48); --text-faint:#71819a; --text-muted:#4d607d; --accent:#008fd5; --accent-warm:#ffe45e; --accent-hot:#ed4ba0; --focus:#7a43e8; --link:#007ebf; --success:#48a861; --shadow:0 20px 55px rgba(37,112,153,.13); --shadow-lift:0 26px 60px rgba(34,104,149,.18); color:#10244a; background:#dff7ff; --font-display:"Orbitron",var(--font-body); }
 body { color:#10244a; background:linear-gradient(135deg,#dff7ff 0%,#f8fdff 48%,#e8e0ff 100%); }
 .app-shell__backdrop { opacity:.75; background-image:linear-gradient(rgba(0,133,190,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,133,190,.06) 1px,transparent 1px),radial-gradient(circle at 12% 18%,rgba(0,194,255,.28),transparent 22%),radial-gradient(circle at 88% 32%,rgba(232,63,170,.14),transparent 24%); background-size:32px 32px,32px 32px,auto,auto; mask-image:linear-gradient(to bottom,#000,transparent 85%); }
 .site-header { border-radius:0 18px 0 18px; background:rgba(255,255,255,.78); box-shadow:0 8px 30px rgba(21,92,135,.12); }
@@ -2944,5 +2945,197 @@ body { background:#dff5ff; }
 }
 @media (prefers-reduced-motion:reduce) {
   .cosmic-field::before,.cosmic-field::after,.cosmic-field__stars,.cosmic-field__stars::before,.cosmic-field__stars::after,.cosmic-field__orbit,.sidebar-radar__sweep,.mission-art__signal,.mission-art__spectrum i,.intro-gate__radar span { animation:none !important; transform:none; }
+}
+
+/* EPID Games career-guide typography direction */
+:root {
+  --font-body: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-display: "Orbitron", var(--font-body);
+  --fs-h2: clamp(2rem, 3.2vw, 2.375rem);
+  --fs-h3: clamp(1.25rem, 1.8vw, 1.4375rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.1875rem);
+  --lh-heading: 1.15;
+  --lh-subhead: 1.28;
+  --lh-body: 1.5;
+  --lh-base: 1.5;
+  --lh-loose: 1.65;
+  --ls-tight: -0.02em;
+  --ls-snug: -0.005em;
+  --ls-eye: 0.12em;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+p,
+li,
+blockquote,
+.site-nav__link,
+.nav-dialog .site-nav__link,
+.cta-btn,
+.back-to-top-btn,
+.contact-block__email,
+.chip-list li,
+.link-row a,
+.markdown-body,
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote,
+.page-header__summary,
+.home-hero__summary,
+.home-hero__body,
+.home-mission,
+.signal-card p,
+.project-card p:not(.project-card__meta),
+.timeline-card p,
+.data-card p,
+.planet-card p,
+.featured-card__content > p,
+.si-hero__lead,
+.si-story-card p,
+.si-fit-card p,
+.si-cases p,
+.si-trend > p,
+.si-gap p,
+.si-case-flow section p,
+.tool-outcome-list p,
+.si-closing__copy,
+.resume-tagline,
+.resume-contact-item__value {
+  font-family: var(--font-body);
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+.page-header__summary,
+.home-hero__summary,
+.home-hero__body,
+.home-mission,
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote,
+.si-hero__lead,
+.si-story-card p {
+  font-size: var(--fs-body);
+}
+
+.page-header h2,
+.intro-gate__copy h1,
+.home-hero__copy h2,
+.home-headline,
+.home-hero-v2 .home-headline,
+.section-title h3,
+.home-section__header h3,
+.signal-card h3,
+.planet-card h3,
+.project-card h3,
+.project-card h4,
+.timeline-card h3,
+.data-card h3,
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.featured-card__content h4,
+.process-card h4,
+.resume-name,
+.resume-section__title,
+.edu-item__school,
+.cert-item strong,
+.proj-item__title,
+.tool-item__body strong,
+.si-section__heading h3,
+.si-fit-card h4,
+.si-cases h4,
+.si-gap h3,
+.si-gap h4,
+.si-closing h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: var(--lh-subhead);
+}
+
+.page-header h2,
+.intro-gate__copy h1 {
+  font-size: var(--fs-h2);
+}
+
+.section-title h3,
+.home-section__header h3,
+.signal-card h3,
+.planet-card h3,
+.project-card h3,
+.project-card h4,
+.timeline-card h3,
+.data-card h3,
+.markdown-body h3,
+.markdown-body h4 {
+  font-size: var(--fs-h3);
+}
+
+.home-headline,
+.home-hero-v2 .home-headline {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.cta-btn,
+.back-to-top-btn,
+.contact-block__email,
+.site-nav__link,
+.nav-dialog .site-nav__link {
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.site-header__brand h1 {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+}
+
+.site-header__eyebrow,
+.page-header__eyebrow,
+.home-hero__eyebrow,
+.intro-gate__eyebrow,
+.signal-card__label,
+.timeline-card__eyebrow,
+.planet-card__eyebrow,
+.project-card__meta,
+.featured-card__role,
+.home-section__eyebrow,
+.signal-label,
+.skill-matrix__category-label,
+.project-detail__meta-item p:first-child,
+.project-detail__meta-label,
+.site-nav__number,
+.site-header__telemetry,
+.mission-art__telemetry,
+.intro-gate__telemetry,
+.intro-gate__signal-text,
+.intro-gate__loading-text,
+.page-header::after,
+.resume-profile::before,
+.si-section__heading > p,
+.si-viewpoint > p,
+.si-closing > p,
+.si-chip-row span,
+.si-fit-card > span,
+.si-case__tag,
+.si-pipeline span,
+.si-gap > span,
+.ai-workflow span,
+.tool-category__label,
+.skill-matrix__gauge,
+.stat-item strong {
+  font-family: var(--font-display);
+  letter-spacing: var(--ls-eye);
 }
 
